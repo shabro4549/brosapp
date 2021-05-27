@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F96608C4-C311-438A-A57C-E4FDC329B8AF"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81116924-DC8D-4B7A-ABC1-B8E249DD3AEC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "brosapp/Controllers/AccountViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "AccountViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "81116924-DC8D-4B7A-ABC1-B8E249DD3AEC - adcd38fef024838b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "brosapp.AccountViewController.customAlert.getter : brosapp.CreateTrackerAlert"
+                  moduleName = "brosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shannonbrown/Desktop/Work/brosapp/brosapp/Controllers/AccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "81116924-DC8D-4B7A-ABC1-B8E249DD3AEC - be0af545b08b5872"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "brosapp.AccountViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; brosapp.AccountViewController"
+                  moduleName = "brosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shannonbrown/Desktop/Work/brosapp/brosapp/Controllers/AccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "979">
+               </Location>
+               <Location
+                  uuid = "81116924-DC8D-4B7A-ABC1-B8E249DD3AEC - d42828f0fa3c73be"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "brosapp.AccountViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;brosapp.AccountViewController&gt;"
+                  moduleName = "brosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shannonbrown/Desktop/Work/brosapp/brosapp/Controllers/AccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "860">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7C33AA1-539A-4D87-BF26-2889B79F2ADB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "brosapp/Controllers/AccountViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
