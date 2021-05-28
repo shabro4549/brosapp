@@ -16,7 +16,20 @@ class ProgressCollectionCell: UICollectionViewCell {
 
     
     func configure(with length: String, with date: String) {
-        progressLabel.text = length
+        if let lengthToDouble = Double(length) {
+            if lengthToDouble <= 59 {
+                progressLabel.text = "\(length)s"
+            } else if lengthToDouble == 60 {
+                progressLabel.text = "1m"
+            } else {
+                let minutes = floor(lengthToDouble/60)
+                print(minutes)
+                let remainingSeconds = lengthToDouble - (minutes * 60)
+                progressLabel.text = "\(Int(minutes))m \(Int(remainingSeconds))s"
+            }
+        }
+        
+        
         dateLabel.text = date
     }
     
