@@ -11,13 +11,13 @@ class ProgressCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var progressLabel: UILabel!
     static let identifier = "ProgressCollectionCell"
+    @IBOutlet weak var dateLabel: UILabel!
     
-//    let date = Date()
-    
-    func configure(with length: String) {
-        print("length in cell: \(length)")
-        progressLabel.text = length
 
+    
+    func configure(with length: String, with date: String) {
+        progressLabel.text = length
+        dateLabel.text = date
     }
     
     override func awakeFromNib() {

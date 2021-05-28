@@ -33,7 +33,6 @@ class TimerViewController: UIViewController {
         
         print("Tracker name made it to timer view controller: \(timerTrackerName)")
         print(user?.email)
-
         // Do any additional setup after loading the view.
     }
     
@@ -106,10 +105,21 @@ class TimerViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         print(timeInSeconds)
+        
+        let date = Date()
+        
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "MMM d, yy"
+        let currentDate = formatter.string(from: date)
+        print(currentDate)
+        
         self.db.collection("progress").addDocument(data: [
                 "LengthInSeconds" : timeInSeconds,
-            "UserEmail" : user?.email!,
-                "Tracker" : timerTrackerName!
+                "UserEmail" : user?.email!,
+                "Tracker" : timerTrackerName!,
+                "Date" : currentDate
         ]) { (error) in
                 if let e = error {
                     print("There was an issue saving data to firestore, \(e)")

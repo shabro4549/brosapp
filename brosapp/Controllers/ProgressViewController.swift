@@ -15,6 +15,7 @@ class ProgressViewController: UIViewController {
     let db = Firestore.firestore()
     @IBOutlet weak var collectionView: UICollectionView!
     var progressLength: [String] = []
+    var cellDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,22 +50,20 @@ class ProgressViewController: UIViewController {
                         
                         if let userData = data["UserEmail"] {
                             let userEmailString = userData as! String
-//                            print(userData)
-//                            print(userEmailString)
                             
                             if userEmailString == user?.email! {
                                 if let trackerData = data["Tracker"] {
                                     let trackerDataString = trackerData as! String
                                     
                                     print("Tracker Name is: \(trackerDataString)")
-//                                    print(data["LengthInSeconds"])
 
                                     if trackerDataString == currentTracker {
                                         let trackerSessionLength = data["LengthInSeconds"] as! String
-
+                                        let trackerDate = data["Date"] as! String
+                                        
+                                        cellDate = trackerDate
                                         progressLength.append(trackerSessionLength)
-                                        print("Session length: \(trackerSessionLength)")
-                                        print("Array of progress lengths: \(progressLength)")
+
                                     }
                                     
                                     DispatchQueue.main.async() { [weak self] in
@@ -144,7 +143,7 @@ extension ProgressViewController : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
-        cell.configure(with: progressLength[indexPath.row])
+        cell.configure(with: progressLength[indexPath.row], with: cellDate)
         print(progressLength[indexPath.row])
         return cell
     }
