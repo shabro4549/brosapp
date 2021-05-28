@@ -41,6 +41,7 @@ class ProgressViewController: UIViewController {
             } else {
                 if let snapshotDocuments = querySnapshot?.documents {
                     
+                    progressLength = []
                     for doc in snapshotDocuments {
 
                         let data = doc.data()
