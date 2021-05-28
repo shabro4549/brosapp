@@ -15,6 +15,9 @@ class ProgressViewController: UIViewController {
     let db = Firestore.firestore()
     @IBOutlet weak var collectionView: UICollectionView!
     var progressLength: [String] = []
+    var progressWeight: [String] = []
+    var progressReps: [String] = []
+    var progressSets: [String] = []
     var cellDate = ""
     
     override func viewDidLoad() {
@@ -29,56 +32,97 @@ class ProgressViewController: UIViewController {
         
         print(trackerName!)
         self.title = trackerName!
-        
-
-        // Do any additional setup after loading the view.
     }
     
     func loadProgress() {
-        db.collection("progress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
-            if let e = error {
-                print("There was an issue retrieving data from Firestore. \(e)")
-            } else {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    
-                    progressLength = []
-                    for doc in snapshotDocuments {
+        
+        if trackerName == "Cold Shower" {
+            db.collection("progress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
+                if let e = error {
+                    print("There was an issue retrieving data from Firestore. \(e)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
 
-                        let data = doc.data()
-                        let currentTracker = trackerName!
-                        
-//                        print(data)
-                        
-                        if let userData = data["UserEmail"] {
-                            let userEmailString = userData as! String
-                            
-                            if userEmailString == user?.email! {
-                                if let trackerData = data["Tracker"] {
-                                    let trackerDataString = trackerData as! String
+                        progressLength = []
+                        for doc in snapshotDocuments {
 
-                                    if trackerDataString == currentTracker {
-                                        let trackerSessionLength = data["LengthInSeconds"] as! String
-                                        let trackerDate = data["Date"] as! String
-                                        
-                                        cellDate = trackerDate
-                                        progressLength.append(trackerSessionLength)
+                            let data = doc.data()
+                            let currentTracker = trackerName!
+
+                            if let userData = data["UserEmail"] {
+                                let userEmailString = userData as! String
+
+                                if userEmailString == user?.email! {
+                                    if let trackerData = data["Tracker"] {
+                                        let trackerDataString = trackerData as! String
+
+                                        if trackerDataString == currentTracker {
+                                            let trackerSessionLength = data["LengthInSeconds"] as! String
+                                            let trackerDate = data["Date"] as! String
+
+                                            cellDate = trackerDate
+                                            progressLength.append(trackerSessionLength)
+
+                                        }
+
+                                        DispatchQueue.main.async() { [weak self] in
+                                                    self?.collectionView.reloadData()
+                                                }
 
                                     }
-                                    
-                                    DispatchQueue.main.async() { [weak self] in
-                                                self?.collectionView.reloadData()
-                                            }
-                                    
+
                                 }
-                                
                             }
+
                         }
 
                     }
-                    
+                }
+
+            }
+        } else if trackerName == "Pushup" {
+            print("loadProgress has correctly read as Pushup and should be working on loading")
+            db.collection("weightProgress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
+                if let e = error {
+                    print("There was an issue retrieving data from Firestore. \(e)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        progressWeight = []
+                        
+                        for doc in snapshotDocuments {
+                            
+                            let data = doc.data()
+//                            let currentTracker = trackerName!
+                            
+                            if let userData = data["UserEmail"] {
+                                let userEmailString = userData as! String
+                                
+                                if userEmailString == user?.email! {
+                                    
+                                    let trackerWeight = data["Weight"] as! String
+                                    let trackerReps = data["Reps"] as! String
+                                    let trackerSets = data["Sets"] as! String
+                                    let trackerDate = data["Date"] as! String
+                                    
+                                    print(trackerWeight)
+                                    cellDate = trackerDate
+                                    progressWeight.append(trackerWeight)
+                                    progressReps.append(trackerReps)
+                                    progressSets.append(trackerSets)
+                                    print(progressWeight)
+                                   
+                                }
+                                DispatchQueue.main.async() { [weak self] in
+                                            self?.collectionView.reloadData()
+                                        }
+                            }
+                            
+                        }
+                        
+                    }
                 }
             }
-                
+            
         }
     }
     
@@ -86,27 +130,14 @@ class ProgressViewController: UIViewController {
 
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        print("Add Button Pressed")
-        
-//        let currentTracker = trackerName!
-//        print(currentTracker)
-//        print("Cold Shower")
-//        if currentTracker == "Cold Shower" {
-//            print("It's a cold shower")
-//        } else if currentTracker == "Pushup" {
-//                        print("It's a pushup")
-//                        performSegue(withIdentifier: "goToNumber", sender: self)
-//        }
-
-        
         
         if trackerName! == "Cold Shower" {
-            print("It's a cold shower")
+//            print("It's a cold shower")
             performSegue(withIdentifier: "goToTimer", sender: self)
             
             
         } else if trackerName! == "Pushup" {
-            print("It's a pushup")
+//            print("It's a pushup")
             performSegue(withIdentifier: "goToNumber", sender: self)
 //            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //               let destinationVC = segue.destination as! TimerViewController
@@ -123,7 +154,7 @@ class ProgressViewController: UIViewController {
             destinationVC.timerTrackerName = trackerName
         } else if trackerName! == "Pushup" {
             let destinationVC = segue.destination as! NumberViewController
-            destinationVC.timerTrackerName = trackerName
+            destinationVC.numberTrackerName = trackerName
         }
     }
     
@@ -136,31 +167,34 @@ class ProgressViewController: UIViewController {
 
 extension ProgressViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return progressLength.count
+        if trackerName! == "Cold Shower" {
+            return progressLength.count
+        } else if trackerName! == "Pushup" {
+            print("The collection view correctly reads as Pushup and returns progress weight")
+            return progressWeight.count
+        } else {
+            return progressWeight.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
-        cell.configure(with: progressLength[indexPath.row], with: cellDate)
-        return cell
+        if trackerName! == "Cold Shower" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
+            cell.configure(with: progressLength[indexPath.row], with: "n/a", with: "n/a", with: cellDate, with: trackerName!)
+            return cell
+        } else if trackerName! == "Pushup" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
+            print(progressWeight[indexPath.row])
+            cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
+            print(progressWeight[indexPath.row])
+            cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
+            return cell
+        }
     }
     
     
 }
-
-
-////MARK: - UICollectionView DataSource & Delegate Methods
-//
-//extension ProgressViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return progressImages.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifier, for: indexPath) as! ProgressCollectionViewCell
-//
-//        cell.configure(with: progressImages[indexPath.row])
-//        return cell
-//    }
-//
-//}

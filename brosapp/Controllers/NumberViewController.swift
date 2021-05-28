@@ -6,18 +6,54 @@
 //
 
 import UIKit
+import Firebase
 
 class NumberViewController: UIViewController {
     
-    var timerTrackerName: String?
-
+    var user = Auth.auth().currentUser
+    var numberTrackerName: String?
+    
+    let db = Firestore.firestore()
+    
+    @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var repsTextField: UITextField!
+    @IBOutlet weak var setsTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func donePressed(_ sender: Any) {
+        
+        let date = Date()
+        let sortingDate = date.timeIntervalSince1970
+        
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "MMM d, yy"
+        let currentDate = formatter.string(from: date)
+        
+        let weight = weightTextField.text!
+        let reps = repsTextField.text!
+        let sets = setsTextField.text!
+        
+        
+        self.db.collection("weightProgress").addDocument(data: [
+            "UserEmail" : user?.email!,
+            "Tracker" : numberTrackerName!,
+            "Date" : currentDate,
+            "TimeCreated" : sortingDate,
+            "Weight" : weight,
+            "Reps" : reps,
+            "Sets" : sets
+        ])
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -129,6 +129,8 @@ class TimerViewController: UIViewController {
                     print("Successfully saved data.")
                 }
             }
+        
+        navigationController?.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation

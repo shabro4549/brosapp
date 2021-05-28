@@ -22,8 +22,21 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9j-dc-3cD">
+                        <rect key="frame" x="0.0" y="84.5" width="128" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-tV-EIb">
+                        <rect key="frame" x="0.0" y="64" width="128" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymL-vv-NIk">
-                        <rect key="frame" x="0.0" y="96" width="128" height="32"/>
+                        <rect key="frame" x="0.0" y="116" width="128" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,17 +47,21 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="GhB-mD-rNg" secondAttribute="bottom" constant="69" id="7Li-6f-AX1"/>
+                <constraint firstAttribute="bottom" secondItem="ymL-vv-NIk" secondAttribute="bottom" id="7rq-pz-fnY"/>
                 <constraint firstItem="GhB-mD-rNg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="36" id="BIO-Ij-32g"/>
-                <constraint firstAttribute="trailing" secondItem="ymL-vv-NIk" secondAttribute="trailing" id="SeQ-8D-64t"/>
-                <constraint firstItem="ymL-vv-NIk" firstAttribute="top" secondItem="GhB-mD-rNg" secondAttribute="bottom" constant="37" id="WLU-3j-mM1"/>
+                <constraint firstAttribute="trailing" secondItem="ymL-vv-NIk" secondAttribute="trailing" id="C0i-Ih-iPa"/>
+                <constraint firstItem="ymL-vv-NIk" firstAttribute="top" secondItem="J9j-dc-3cD" secondAttribute="bottom" constant="17" id="IIu-tM-o18"/>
                 <constraint firstItem="GhB-mD-rNg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="35" id="dFZ-ue-iSh"/>
-                <constraint firstAttribute="bottom" secondItem="ymL-vv-NIk" secondAttribute="bottom" symbolic="YES" id="nGV-ZA-2iG"/>
-                <constraint firstItem="ymL-vv-NIk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uOM-vb-Y6W"/>
+                <constraint firstItem="J9j-dc-3cD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="duO-OD-f9M"/>
+                <constraint firstItem="ymL-vv-NIk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nIr-eQ-HMf"/>
                 <constraint firstAttribute="trailing" secondItem="GhB-mD-rNg" secondAttribute="trailing" constant="34" id="vv7-6O-1Ur"/>
+                <constraint firstAttribute="trailing" secondItem="J9j-dc-3cD" secondAttribute="trailing" id="wlE-TW-RZk"/>
             </constraints>
             <connections>
                 <outlet property="dateLabel" destination="ymL-vv-NIk" id="E4c-cx-90i"/>
                 <outlet property="progressLabel" destination="GhB-mD-rNg" id="OBr-kz-miB"/>
+                <outlet property="repsLabel" destination="BOG-tV-EIb" id="aKX-0v-gML"/>
+                <outlet property="setsLabel" destination="J9j-dc-3cD" id="g4e-B3-0n8"/>
             </connections>
             <point key="canvasLocation" x="-155.07246376811597" y="100.44642857142857"/>
         </collectionViewCell>
