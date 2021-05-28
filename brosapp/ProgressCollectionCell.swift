@@ -23,7 +23,6 @@ class ProgressCollectionCell: UICollectionViewCell {
                 progressLabel.text = "1m"
             } else {
                 let minutes = floor(lengthToDouble/60)
-                print(minutes)
                 let remainingSeconds = lengthToDouble - (minutes * 60)
                 progressLabel.text = "\(Int(minutes))m \(Int(remainingSeconds))s"
             }

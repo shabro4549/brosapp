@@ -107,6 +107,7 @@ class TimerViewController: UIViewController {
         print(timeInSeconds)
         
         let date = Date()
+        let sortingDate = date.timeIntervalSince1970
         
         let formatter = DateFormatter()
         formatter.timeZone = .current
@@ -119,7 +120,8 @@ class TimerViewController: UIViewController {
                 "LengthInSeconds" : timeInSeconds,
                 "UserEmail" : user?.email!,
                 "Tracker" : timerTrackerName!,
-                "Date" : currentDate
+                "Date" : currentDate,
+                "TimeCreated" : sortingDate
         ]) { (error) in
                 if let e = error {
                     print("There was an issue saving data to firestore, \(e)")

@@ -35,7 +35,7 @@ class ProgressViewController: UIViewController {
     }
     
     func loadProgress() {
-        db.collection("progress").addSnapshotListener { [self] (querySnapshot, error) in
+        db.collection("progress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
             } else {
@@ -55,8 +55,6 @@ class ProgressViewController: UIViewController {
                             if userEmailString == user?.email! {
                                 if let trackerData = data["Tracker"] {
                                     let trackerDataString = trackerData as! String
-                                    
-                                    print("Tracker Name is: \(trackerDataString)")
 
                                     if trackerDataString == currentTracker {
                                         let trackerSessionLength = data["LengthInSeconds"] as! String
@@ -138,14 +136,12 @@ class ProgressViewController: UIViewController {
 
 extension ProgressViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("progress array length: \(progressLength.count)")
         return progressLength.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
         cell.configure(with: progressLength[indexPath.row], with: cellDate)
-        print(progressLength[indexPath.row])
         return cell
     }
     
