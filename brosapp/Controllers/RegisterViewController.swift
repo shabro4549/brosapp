@@ -29,11 +29,10 @@ class RegisterViewController: UIViewController {
             
         }
         
-        db.collection("users").addDocument(data: [
+        db.collection("users").document(emailTextField.text!).setData([
             "Name" : nameTextField.text!,
             "Email" : emailTextField.text!
         ])
-        
     }
 
 }

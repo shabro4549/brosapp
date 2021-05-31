@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A4C6C16F7492FED0C38BD4B8 /* Pods_brosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDE8A0EEDAB38C26E55D809 /* Pods_brosapp.framework */; };
 		FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD05B34826533C2D00D124F9 /* ProgressViewController.swift */; };
+		FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD229DDE2664874300A9F9FB /* ProfileViewController.swift */; };
 		FD304BB62640967200C82F40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD304BB52640967200C82F40 /* LoginViewController.swift */; };
 		FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD304BB92640968400C82F40 /* RegisterViewController.swift */; };
 		FD304BBE2640A2D700C82F40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD304BBD2640A2D700C82F40 /* GoogleService-Info.plist */; };
@@ -33,6 +34,7 @@
 		9B3886A30BB08868E8B80F8B /* Pods-brosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brosapp.release.xcconfig"; path = "Target Support Files/Pods-brosapp/Pods-brosapp.release.xcconfig"; sourceTree = "<group>"; };
 		9BCF4A50A3C1E2DC6EE4C56B /* Pods-brosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brosapp.debug.xcconfig"; path = "Target Support Files/Pods-brosapp/Pods-brosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		FD05B34826533C2D00D124F9 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		FD229DDE2664874300A9F9FB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FD304BB52640967200C82F40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD304BB92640968400C82F40 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FD304BBD2640A2D700C82F40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				FD05B34826533C2D00D124F9 /* ProgressViewController.swift */,
 				FDB79CC426544B6600D92B27 /* TimerViewController.swift */,
 				FD9B5B89265879F8002E867C /* NumberViewController.swift */,
+				FD229DDE2664874300A9F9FB /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				FD46B4E2263CDF81007BD5C4 /* AppDelegate.swift in Sources */,
 				FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */,
 				FD9B5B8A265879F9002E867C /* NumberViewController.swift in Sources */,
+				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,
 				FDB724252641F71900985FE8 /* Tracker.swift in Sources */,
 			);
