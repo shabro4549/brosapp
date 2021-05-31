@@ -16,7 +16,7 @@ class AccountViewController: UIViewController {
     var selectedTracker = "" 
     let db = Firestore.firestore()
     @IBOutlet weak var trackerTableView: UITableView!
-    let alert = UIAlertController(title: "Add a Tracker", message: "Add something you'd like to track", preferredStyle: .alert)
+//    let alert = UIAlertController(title: "Add a Tracker", message: "Add something you'd like to track", preferredStyle: .alert)
     let customAlert = CreateTrackerAlert()
     
     
@@ -280,8 +280,8 @@ class CreateTrackerAlert: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
-        
-        
+    
+        alertView.isUserInteractionEnabled = true
         
         UIView.animate(withDuration: 0.25, animations: {
             self.backgroundView.alpha = Constants.backgroundAlphaTo
@@ -296,6 +296,7 @@ class CreateTrackerAlert: UIViewController {
         
         
     }
+    
     
     @objc func dismissAlert() {
         print(sampleTextField.text!)

@@ -56,6 +56,10 @@ class ProgressViewController: UIViewController {
                                     if let trackerData = data["Tracker"] {
                                         let trackerDataString = trackerData as! String
 
+//                                        if trackerDataString == "Cold Shower" {
+//
+//                                        } else if trackerDataString == "Pushup" {
+//                                        }
                                         if trackerDataString == currentTracker {
                                             let trackerSessionLength = data["LengthInSeconds"] as! String
                                             let trackerDate = data["Date"] as! String
