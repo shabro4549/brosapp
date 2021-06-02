@@ -39,7 +39,7 @@ class ProgressViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        print(trackerName!)
+//        print(trackerName!)
         self.title = trackerName!
     }
     
@@ -118,12 +118,12 @@ class ProgressViewController: UIViewController {
                                     let trackerSets = data["Sets"] as! String
                                     let trackerDate = data["Date"] as! String
                                     
-                                    print(trackerWeight)
+//                                    print(trackerWeight)
                                     cellDate = trackerDate
                                     progressWeight.append(trackerWeight)
                                     progressReps.append(trackerReps)
                                     progressSets.append(trackerSets)
-                                    print(progressWeight)
+//                                    print(progressWeight)
                                    
                                 }
                                 DispatchQueue.main.async() { [weak self] in

@@ -164,7 +164,7 @@ extension AccountViewController: TrackerCellDelegate {
         let destinationVC = segue.destination as! ProgressViewController
         
 //      FIX BELOW SO IT FINDS THE TRACKER METRIC FROM THE TRACKER NAME BUT ONLY IF IT'S THE SAME USER
-        print(usersTrackers[0])
+//        print(usersTrackers[0])
         
         for tracker in usersTrackers {
             if tracker.trackerName == selectedTracker {

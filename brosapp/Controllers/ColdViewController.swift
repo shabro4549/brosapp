@@ -32,7 +32,7 @@ class ColdViewController: UIViewController {
         super.viewDidLoad()
         
         print("Tracker name made it to timer view controller: \(trackerTitle!)")
-        print(user?.email)
+//        print(user?.email)
         // Do any additional setup after loading the view.
     }
     
@@ -104,7 +104,7 @@ class ColdViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        print(timeInSeconds)
+//        print(timeInSeconds)
         
         let date = Date()
         let sortingDate = date.timeIntervalSince1970
@@ -114,7 +114,7 @@ class ColdViewController: UIViewController {
         formatter.locale = .current
         formatter.dateFormat = "MMM d, yy"
         let currentDate = formatter.string(from: date)
-        print(currentDate)
+//        print(currentDate)
         
         self.db.collection("progress").addDocument(data: [
                 "LengthInSeconds" : timeInSeconds,

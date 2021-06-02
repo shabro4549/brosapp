@@ -14,7 +14,7 @@ class ColdCollectionCell: UICollectionViewCell {
     @IBOutlet weak var progressLabel: UILabel!
     
     func configure(with length: String, with date: String, with tracker: String) {
-        print("the tracker in the cell is: \(tracker)")
+//        print("the tracker in the cell is: \(tracker)")
             if let lengthToDouble = Double(length) {
                 if lengthToDouble <= 59 {
                     progressLabel.text = "\(length)s"
