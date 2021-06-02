@@ -10,6 +10,8 @@
 		A4C6C16F7492FED0C38BD4B8 /* Pods_brosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDE8A0EEDAB38C26E55D809 /* Pods_brosapp.framework */; };
 		FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD05B34826533C2D00D124F9 /* ProgressViewController.swift */; };
 		FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD229DDE2664874300A9F9FB /* ProfileViewController.swift */; };
+		FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */; };
+		FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */; };
 		FD304BB62640967200C82F40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD304BB52640967200C82F40 /* LoginViewController.swift */; };
 		FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD304BB92640968400C82F40 /* RegisterViewController.swift */; };
 		FD304BBE2640A2D700C82F40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD304BBD2640A2D700C82F40 /* GoogleService-Info.plist */; };
@@ -18,15 +20,18 @@
 		FD46B4E6263CDF81007BD5C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46B4E5263CDF81007BD5C4 /* ViewController.swift */; };
 		FD46B4E9263CDF81007BD5C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD46B4E7263CDF81007BD5C4 /* Main.storyboard */; };
 		FD46B4EE263CDF83007BD5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD46B4EC263CDF83007BD5C4 /* LaunchScreen.storyboard */; };
-		FD9B5B8A265879F9002E867C /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5B89265879F8002E867C /* NumberViewController.swift */; };
+		FD9B5B8A265879F9002E867C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5B89265879F8002E867C /* WeightViewController.swift */; };
 		FD9B5B8F265F0B0A002E867C /* ProgressCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5B8D265F0B0A002E867C /* ProgressCollectionCell.swift */; };
 		FD9B5B90265F0B0A002E867C /* ProgressCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */; };
 		FDB724252641F71900985FE8 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB724242641F71900985FE8 /* Tracker.swift */; };
 		FDB7242A2643436000985FE8 /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB724282643436000985FE8 /* TrackerCell.swift */; };
 		FDB7242B2643436000985FE8 /* TrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB724292643436000985FE8 /* TrackerCell.xib */; };
 		FDB7243126434BF500985FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB7243026434BF500985FE8 /* Assets.xcassets */; };
-		FDB79CC526544B6600D92B27 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB79CC426544B6600D92B27 /* TimerViewController.swift */; };
+		FDB79CC526544B6600D92B27 /* ColdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB79CC426544B6600D92B27 /* ColdViewController.swift */; };
 		FDD7E6432640D60F00C9E202 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7E6422640D60F00C9E202 /* AccountViewController.swift */; };
+		FDD966372667181600654741 /* BreatheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966362667181600654741 /* BreatheViewController.swift */; };
+		FDD9663A2667182600654741 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966392667182600654741 /* NumberViewController.swift */; };
+		FDD9663D2667183400654741 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9663C2667183400654741 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,8 @@
 		9BCF4A50A3C1E2DC6EE4C56B /* Pods-brosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brosapp.debug.xcconfig"; path = "Target Support Files/Pods-brosapp/Pods-brosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		FD05B34826533C2D00D124F9 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		FD229DDE2664874300A9F9FB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColdCollectionCell.swift; sourceTree = "<group>"; };
+		FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColdCollectionCell.xib; sourceTree = "<group>"; };
 		FD304BB52640967200C82F40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD304BB92640968400C82F40 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FD304BBD2640A2D700C82F40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -45,15 +52,18 @@
 		FD46B4E8263CDF81007BD5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD46B4ED263CDF83007BD5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD46B4EF263CDF83007BD5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD9B5B89265879F8002E867C /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		FD9B5B89265879F8002E867C /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		FD9B5B8D265F0B0A002E867C /* ProgressCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionCell.swift; sourceTree = "<group>"; };
 		FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCollectionCell.xib; sourceTree = "<group>"; };
 		FDB724242641F71900985FE8 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		FDB724282643436000985FE8 /* TrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
 		FDB724292643436000985FE8 /* TrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerCell.xib; sourceTree = "<group>"; };
 		FDB7243026434BF500985FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FDB79CC426544B6600D92B27 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		FDB79CC426544B6600D92B27 /* ColdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColdViewController.swift; sourceTree = "<group>"; };
 		FDD7E6422640D60F00C9E202 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		FDD966362667181600654741 /* BreatheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheViewController.swift; sourceTree = "<group>"; };
+		FDD966392667182600654741 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		FDD9663C2667183400654741 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,8 @@
 				FDB724292643436000985FE8 /* TrackerCell.xib */,
 				FD9B5B8D265F0B0A002E867C /* ProgressCollectionCell.swift */,
 				FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */,
+				FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */,
+				FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */,
 			);
 			path = brosapp;
 			sourceTree = "<group>";
@@ -130,10 +142,13 @@
 				FD304BB52640967200C82F40 /* LoginViewController.swift */,
 				FD304BB92640968400C82F40 /* RegisterViewController.swift */,
 				FDD7E6422640D60F00C9E202 /* AccountViewController.swift */,
-				FD05B34826533C2D00D124F9 /* ProgressViewController.swift */,
-				FDB79CC426544B6600D92B27 /* TimerViewController.swift */,
-				FD9B5B89265879F8002E867C /* NumberViewController.swift */,
 				FD229DDE2664874300A9F9FB /* ProfileViewController.swift */,
+				FD05B34826533C2D00D124F9 /* ProgressViewController.swift */,
+				FDB79CC426544B6600D92B27 /* ColdViewController.swift */,
+				FD9B5B89265879F8002E867C /* WeightViewController.swift */,
+				FDD966362667181600654741 /* BreatheViewController.swift */,
+				FDD966392667182600654741 /* NumberViewController.swift */,
+				FDD9663C2667183400654741 /* TimerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */,
 				FD46B4EE263CDF83007BD5C4 /* LaunchScreen.storyboard in Resources */,
 				FD304BBE2640A2D700C82F40 /* GoogleService-Info.plist in Resources */,
 				FD9B5B90265F0B0A002E867C /* ProgressCollectionCell.xib in Resources */,
@@ -272,16 +288,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9B5B8F265F0B0A002E867C /* ProgressCollectionCell.swift in Sources */,
-				FDB79CC526544B6600D92B27 /* TimerViewController.swift in Sources */,
+				FDB79CC526544B6600D92B27 /* ColdViewController.swift in Sources */,
 				FDB7242A2643436000985FE8 /* TrackerCell.swift in Sources */,
 				FD304BB62640967200C82F40 /* LoginViewController.swift in Sources */,
 				FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */,
+				FDD966372667181600654741 /* BreatheViewController.swift in Sources */,
+				FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */,
 				FDD7E6432640D60F00C9E202 /* AccountViewController.swift in Sources */,
 				FD46B4E6263CDF81007BD5C4 /* ViewController.swift in Sources */,
 				FD46B4E2263CDF81007BD5C4 /* AppDelegate.swift in Sources */,
 				FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */,
-				FD9B5B8A265879F9002E867C /* NumberViewController.swift in Sources */,
+				FD9B5B8A265879F9002E867C /* WeightViewController.swift in Sources */,
+				FDD9663D2667183400654741 /* TimerViewController.swift in Sources */,
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
+				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,
 				FDB724252641F71900985FE8 /* Tracker.swift in Sources */,
 			);

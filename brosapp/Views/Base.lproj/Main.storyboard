@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+            <point key="canvasLocation" x="942" y="94"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="eMh-0h-wen">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFz-7o-cO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2908.6956521739135" y="397.76785714285711"/>
+            <point key="canvasLocation" x="2909" y="398"/>
         </scene>
         <!--ProgressViewController-->
         <scene sceneID="PTE-Be-23w">
@@ -272,13 +272,16 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Jt2-LZ-QGg" id="DCq-zf-zuU"/>
-                        <segue destination="cd6-jA-TaN" kind="show" identifier="goToNumber" id="TuJ-IW-heb"/>
-                        <segue destination="Xri-FY-G0H" kind="show" identifier="goToTimer" id="SKa-Fi-U4T"/>
+                        <segue destination="cd6-jA-TaN" kind="show" identifier="goToWeight" id="TuJ-IW-heb"/>
+                        <segue destination="Xri-FY-G0H" kind="show" identifier="goToCold" id="SKa-Fi-U4T"/>
+                        <segue destination="tyA-yZ-PL7" kind="show" identifier="goToBreathe" id="tpi-ZK-5Pm"/>
+                        <segue destination="aBd-RE-nb3" kind="show" identifier="goToNumber" id="MDx-Ft-feN"/>
+                        <segue destination="lyo-gE-Kxa" kind="show" identifier="goToTimer" id="vnM-cu-d4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evb-BD-YGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3842" y="398"/>
+            <point key="canvasLocation" x="2909" y="1151"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CYX-Sw-jq8">
@@ -297,7 +300,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77r-YM-OIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3262" y="-1061"/>
+            <point key="canvasLocation" x="3409" y="-1926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jDc-NW-8BW">
@@ -316,7 +319,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeZ-YQ-eTL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909" y="-303"/>
+            <point key="canvasLocation" x="2909" y="-820"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H9u-Jm-Kwg">
@@ -335,7 +338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQP-kG-Ay3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3841" y="-318"/>
+            <point key="canvasLocation" x="3841" y="-820"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="wdz-8u-pGZ">
@@ -363,12 +366,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cg3-47-1ye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4805.7971014492759" y="-550.44642857142856"/>
+            <point key="canvasLocation" x="3841" y="-50"/>
         </scene>
-        <!--NumberViewController-->
+        <!--WeightViewController-->
         <scene sceneID="L88-oJ-gD6">
             <objects>
-                <viewController storyboardIdentifier="NumberViewController" title="NumberViewController" id="cd6-jA-TaN" customClass="NumberViewController" customModule="brosapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeightViewController" title="WeightViewController" id="cd6-jA-TaN" customClass="WeightViewController" customModule="brosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XyM-sB-mjA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,12 +448,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LG-4e-O7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4739" y="94"/>
+            <point key="canvasLocation" x="1141" y="1929"/>
         </scene>
-        <!--TimerViewController-->
+        <!--ColdViewController-->
         <scene sceneID="7cM-qd-oZS">
             <objects>
-                <viewController storyboardIdentifier="TimerViewController" title="TimerViewController" id="Xri-FY-G0H" customClass="TimerViewController" customModule="brosapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColdViewController" title="ColdViewController" id="Xri-FY-G0H" customClass="ColdViewController" customModule="brosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJw-N6-dET">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -511,7 +514,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHd-bt-gcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4807" y="783"/>
+            <point key="canvasLocation" x="2019" y="1929"/>
+        </scene>
+        <!--BreatheViewController-->
+        <scene sceneID="sDb-ve-4CR">
+            <objects>
+                <viewController storyboardIdentifier="BreatheViewController" title="BreatheViewController" id="tyA-yZ-PL7" customClass="BreatheViewController" customModule="brosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dJ9-TW-aqU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breathe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-3k-RiG">
+                                <rect key="frame" x="186" y="157" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h9c-Kg-YVk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ddF-3P-cUh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZU-XG-HWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909" y="1929"/>
+        </scene>
+        <!--NumberViewController-->
+        <scene sceneID="sP9-wd-r2O">
+            <objects>
+                <viewController storyboardIdentifier="NumberViewController" title="NumberViewController" id="aBd-RE-nb3" customClass="NumberViewController" customModule="brosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4J-p5-9Cx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFu-Lq-Z6p">
+                                <rect key="frame" x="186" y="160" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y3d-J6-3Th"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sMB-7S-Ula"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AjU-je-LHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3701" y="1929"/>
+        </scene>
+        <!--TimerViewController-->
+        <scene sceneID="6l9-3i-ZqH">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" title="TimerViewController" id="lyo-gE-Kxa" customClass="TimerViewController" customModule="brosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KnY-3o-hfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-Hy-9lw">
+                                <rect key="frame" x="186" y="153" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dSw-86-edH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nRi-Na-Tyr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ba7-KW-qFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4462" y="1929"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="O5m-fK-3mJ">

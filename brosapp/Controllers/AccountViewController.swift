@@ -27,6 +27,7 @@ class AccountViewController: UIViewController {
         trackerTableView.dataSource = self
         trackerTableView.register(UINib(nibName: "TrackerCell", bundle: nil), forCellReuseIdentifier: "TrackerCell")
         loadTrackers()
+
 //        alert.addTextField { (textField) in
 //        textField.placeholder = "Name of metric you'd like to track"
 //        }
@@ -34,6 +35,8 @@ class AccountViewController: UIViewController {
 //        print(user?.email!)
 
         // Do any additional setup after loading the view.
+        
+//        let docRef = db.collection("trackers").document(user?.email!)
     }
     
     func loadTrackers() {
@@ -159,8 +162,33 @@ extension AccountViewController: TrackerCellDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ProgressViewController
+        
+//      FIX BELOW SO IT FINDS THE TRACKER METRIC FROM THE TRACKER NAME BUT ONLY IF IT'S THE SAME USER
+        print(usersTrackers[0])
+        
+        for tracker in usersTrackers {
+            if tracker.trackerName == selectedTracker {
+                let metric = tracker.trackingMetric
+                print(metric)
+                destinationVC.trackingMetric = metric
+            }
+        }
+//        if let userEmail = user?.email {
+//            let userEmailString = String(userEmail)
+//            let docRef = db.collection("trackers")
+//            docRef.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//                    let property = document.get("Tracking Metric") as! String
+//                    print(property)
+//                    destinationVC.trackingMetric = property
+//                } else {
+//                    print("Document does not exist")
+//                }
+//            }
+//        }
+//
         destinationVC.trackerName = selectedTracker
-//        print(selectedTracker)
+        
     }
 }
 

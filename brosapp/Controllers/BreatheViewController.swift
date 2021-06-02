@@ -1,5 +1,5 @@
 //
-//  NumberViewController.swift
+//  BreatheViewController.swift
 //  brosapp
 //
 //  Created by Shannon Brown on 2021-06-01.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class NumberViewController: UIViewController {
+class BreatheViewController: UIViewController {
     
     var user = Auth.auth().currentUser
     var trackerTitle: String?
