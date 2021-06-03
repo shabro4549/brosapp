@@ -301,13 +301,21 @@ class CreateTrackerAlert: UIViewController {
 //        customSC.selectedSegmentIndex
         
         
-        let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.height-50, width: alertView.frame.size.width, height: 50))
+        let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
         button.setTitle("Add Tracker", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
 //        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
+        
+        let cancelButton = UIButton(frame: CGRect(x: alertView.frame.size.width/2, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
+//        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
+        cancelButton.backgroundColor = #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1)
+        cancelButton.addTarget(self, action: #selector(cancelAlert), for: .touchUpInside)
+        alertView.addSubview(cancelButton)
     
         alertView.isUserInteractionEnabled = true
         
@@ -325,40 +333,7 @@ class CreateTrackerAlert: UIViewController {
         
     }
     
-    
-    @objc func dismissAlert() {
-        print(sampleTextField.text!)
-        print(customSC.selectedSegmentIndex)
-        var selectedTrackingMetric = ""
-        
-        if customSC.selectedSegmentIndex == 0 {
-            selectedTrackingMetric = "time"
-        } else if customSC.selectedSegmentIndex == 1 {
-            selectedTrackingMetric = "number"
-        } else if customSC.selectedSegmentIndex == 2 {
-            selectedTrackingMetric = "breathe"
-        } else if customSC.selectedSegmentIndex == 3 {
-            selectedTrackingMetric = "cold"
-        } else if customSC.selectedSegmentIndex == 4 {
-            selectedTrackingMetric = "weight"
-        }
-        
-        if let addedGoal = sampleTextField.text, let user = Auth.auth().currentUser?.email {
-            self.db.collection("trackers").addDocument(data: [
-                    "Name of Tracker" : addedGoal,
-                    "user" : user,
-                    "Tracking Metric" : selectedTrackingMetric
-            ]) { (error) in
-                    if let e = error {
-                        print("There was an issue saving data to firestore, \(e)")
-                    } else {
-                        print("Successfully saved data.")
-                    }
-                }
-            }
-        
-                
-        
+    @objc func cancelAlert() {
         guard let targetView = myTargetView else {
             return
         }
@@ -381,6 +356,71 @@ class CreateTrackerAlert: UIViewController {
             }
             
         })
+        
+    }
+    
+    
+    @objc func dismissAlert() {
+        if sampleTextField.text! == "" {
+//            sampleTextField.placeholder = "What would you like to track?"
+            sampleTextField.attributedPlaceholder = NSAttributedString(string: "What would you like to track?",
+                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        } else {
+            print(sampleTextField.text!)
+            print(customSC.selectedSegmentIndex)
+            var selectedTrackingMetric = ""
+            
+            if customSC.selectedSegmentIndex == 0 {
+                selectedTrackingMetric = "time"
+            } else if customSC.selectedSegmentIndex == 1 {
+                selectedTrackingMetric = "number"
+            } else if customSC.selectedSegmentIndex == 2 {
+                selectedTrackingMetric = "breathe"
+            } else if customSC.selectedSegmentIndex == 3 {
+                selectedTrackingMetric = "cold"
+            } else if customSC.selectedSegmentIndex == 4 {
+                selectedTrackingMetric = "weight"
+            }
+            
+            if let addedGoal = sampleTextField.text, let user = Auth.auth().currentUser?.email {
+                self.db.collection("trackers").addDocument(data: [
+                        "Name of Tracker" : addedGoal,
+                        "user" : user,
+                        "Tracking Metric" : selectedTrackingMetric
+                ]) { (error) in
+                        if let e = error {
+                            print("There was an issue saving data to firestore, \(e)")
+                        } else {
+                            print("Successfully saved data.")
+                        }
+                    }
+                }
+        
+            guard let targetView = myTargetView else {
+                return
+            }
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                
+                self.alertView.frame = CGRect(x: 40, y: targetView.frame.size.height, width: targetView.frame.size.width-80, height: 300)
+                
+            }, completion: { done in
+                if done {
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.backgroundView.alpha = 0
+                        self.sampleTextField.text = ""
+                    }, completion: { done in
+                        if done {
+                            self.alertView.removeFromSuperview()
+                            self.backgroundView.removeFromSuperview()
+                        }
+                    })
+                }
+                
+            })
+            
+        }
+        
     }
     
     

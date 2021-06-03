@@ -27,31 +27,33 @@ class WeightViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         
-        let date = Date()
-        let sortingDate = date.timeIntervalSince1970
+
+            let date = Date()
+            let sortingDate = date.timeIntervalSince1970
+            
+            let formatter = DateFormatter()
+            formatter.timeZone = .current
+            formatter.locale = .current
+            formatter.dateFormat = "MMM d, yy"
+            let currentDate = formatter.string(from: date)
+            
+            let weight = weightTextField.text!
+            let reps = repsTextField.text!
+            let sets = setsTextField.text!
+            
+            
+            self.db.collection("weightProgress").addDocument(data: [
+                "UserEmail" : user?.email!,
+                "Tracker" : trackerTitle!,
+                "Date" : currentDate,
+                "TimeCreated" : sortingDate,
+                "Weight" : weight,
+                "Reps" : reps,
+                "Sets" : sets
+            ])
+            
+            navigationController?.popViewController(animated: true)
         
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.locale = .current
-        formatter.dateFormat = "MMM d, yy"
-        let currentDate = formatter.string(from: date)
-        
-        let weight = weightTextField.text!
-        let reps = repsTextField.text!
-        let sets = setsTextField.text!
-        
-        
-        self.db.collection("weightProgress").addDocument(data: [
-            "UserEmail" : user?.email!,
-            "Tracker" : trackerTitle!,
-            "Date" : currentDate,
-            "TimeCreated" : sortingDate,
-            "Weight" : weight,
-            "Reps" : reps,
-            "Sets" : sets
-        ])
-        
-        navigationController?.popViewController(animated: true)
     }
     
     /*
