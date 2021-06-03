@@ -17,6 +17,7 @@ class NumberViewController: UIViewController {
 
     @IBOutlet weak var numberLabel: UITextField!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var feedbackLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class NumberViewController: UIViewController {
 //        numberLabel.delegate = self
         numberLabel.text = "0"
         numberLabel.keyboardType = .numberPad
+        feedbackLabel.alpha = 0
         // Do any additional setup after loading the view.
     }
     
@@ -33,27 +35,34 @@ class NumberViewController: UIViewController {
     
     
     @IBAction func donePressed(_ sender: Any) {
-        let date = Date()
-        let sortingDate = date.timeIntervalSince1970
+        if numberLabel.text == "0" || numberLabel.text == "" {
+            feedbackLabel.alpha = 1
+            feedbackLabel.text = "Enter a number to log progress"
+            feedbackLabel.textColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        } else {
+            let date = Date()
+            let sortingDate = date.timeIntervalSince1970
+            
+            let formatter = DateFormatter()
+            formatter.timeZone = .current
+            formatter.locale = .current
+            formatter.dateFormat = "MMM d, yy"
+            let currentDate = formatter.string(from: date)
+            
+            let number = numberLabel.text!
         
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.locale = .current
-        formatter.dateFormat = "MMM d, yy"
-        let currentDate = formatter.string(from: date)
-        
-        let number = numberLabel.text!
-    
-        self.db.collection("progress").addDocument(data: [
-            "UserEmail" : user?.email!,
-            "Tracker" : trackerTitle!,
-            "Date" : currentDate,
-            "TimeCreated" : sortingDate,
-            "Number" : number,
+            self.db.collection("progress").addDocument(data: [
+                "UserEmail" : user?.email!,
+                "Tracker" : trackerTitle!,
+                "Date" : currentDate,
+                "TimeCreated" : sortingDate,
+                "Number" : number,
 
-        ])
+            ])
+            
+            navigationController?.popViewController(animated: true)
+        }
         
-        navigationController?.popViewController(animated: true)
     }
     
     /*
