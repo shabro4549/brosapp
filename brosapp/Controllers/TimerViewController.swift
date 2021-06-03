@@ -15,6 +15,7 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let db = Firestore.firestore()
     
@@ -32,6 +33,9 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func startStopPressed(_ sender: Any) {
+        titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        titleLabel.text = "Timer"
+        
         if(timerCounting) {
             timerCounting = false
             timer.invalidate()
@@ -95,31 +99,37 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        let date = Date()
-        let sortingDate = date.timeIntervalSince1970
-        
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.locale = .current
-        formatter.dateFormat = "MMM d, yy"
-        let currentDate = formatter.string(from: date)
-//        print(currentDate)
-        
-        self.db.collection("progress").addDocument(data: [
-                "LengthInSeconds" : timeInSeconds,
-                "UserEmail" : user?.email!,
-                "Tracker" : trackerTitle!,
-                "Date" : currentDate,
-                "TimeCreated" : sortingDate
-        ]) { (error) in
-                if let e = error {
-                    print("There was an issue saving data to firestore, \(e)")
-                } else {
-                    print("Successfully saved data.")
+        if timerLabel.text == "0 0 : 0 0" {
+            titleLabel.text = "No session has been timed"
+            titleLabel.textColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        } else {
+            let date = Date()
+            let sortingDate = date.timeIntervalSince1970
+            
+            let formatter = DateFormatter()
+            formatter.timeZone = .current
+            formatter.locale = .current
+            formatter.dateFormat = "MMM d, yy"
+            let currentDate = formatter.string(from: date)
+    //        print(currentDate)
+            
+            self.db.collection("progress").addDocument(data: [
+                    "LengthInSeconds" : timeInSeconds,
+                    "UserEmail" : user?.email!,
+                    "Tracker" : trackerTitle!,
+                    "Date" : currentDate,
+                    "TimeCreated" : sortingDate
+            ]) { (error) in
+                    if let e = error {
+                        print("There was an issue saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data.")
+                    }
                 }
-            }
+            
+            navigationController?.popViewController(animated: true)
+        }
         
-        navigationController?.popViewController(animated: true)
     }
     
     /*
