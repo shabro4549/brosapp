@@ -211,9 +211,7 @@ class BreatheViewController: UIViewController {
         formatter.dateFormat = "MMM d, yy"
         let currentDate = formatter.string(from: date)
 //        print(currentDate)
-        
-//        timeInSeconds = timerLabel.text!
-        
+                
         self.db.collection("progress").addDocument(data: [
                 "LengthInSeconds" : timeInSeconds,
                 "UserEmail" : user?.email!,

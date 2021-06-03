@@ -19,7 +19,6 @@ class ColdViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-
     
     var timer = Timer()
     var count = 0

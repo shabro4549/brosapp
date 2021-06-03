@@ -670,6 +670,7 @@
                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="donePressed:" destination="lyo-gE-Kxa" eventType="touchUpInside" id="F5Z-yc-UNm"/>
                                     <action selector="donePressed:" destination="Xri-FY-G0H" eventType="touchUpInside" id="O4x-yF-sr9"/>
                                     <action selector="donePressed:" destination="aBd-RE-nb3" eventType="touchUpInside" id="T4y-G8-T0V"/>
                                 </connections>
@@ -686,6 +687,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
+                                    <action selector="startStopPressed:" destination="lyo-gE-Kxa" eventType="touchUpInside" id="OmE-EY-Vfe"/>
                                     <action selector="startStopPressed:" destination="Xri-FY-G0H" eventType="touchUpInside" id="zhm-f8-YJk"/>
                                 </connections>
                             </button>
@@ -694,6 +696,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
+                                    <action selector="resetPressed:" destination="lyo-gE-Kxa" eventType="touchUpInside" id="L6R-wm-aod"/>
                                     <action selector="resetPressed:" destination="Xri-FY-G0H" eventType="touchUpInside" id="azC-Mf-djH"/>
                                 </connections>
                             </button>
@@ -702,6 +705,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="nRi-Na-Tyr"/>
+                    <connections>
+                        <outlet property="startStopButton" destination="pHO-1D-n1S" id="r54-a5-nFK"/>
+                        <outlet property="timerLabel" destination="d4o-Eh-yom" id="bc4-aT-weh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba7-KW-qFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
