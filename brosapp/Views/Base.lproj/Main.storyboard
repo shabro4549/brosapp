@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -296,6 +295,7 @@
                     <connections>
                         <segue destination="ANH-se-EXH" kind="relationship" relationship="viewControllers" id="UxL-LG-nLc"/>
                         <segue destination="jYm-4h-ygz" kind="relationship" relationship="viewControllers" id="OM5-Pk-ZvD"/>
+                        <segue destination="eZl-5r-bM9" kind="relationship" relationship="viewControllers" id="jFU-54-Mn1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77r-YM-OIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -306,9 +306,7 @@
         <scene sceneID="jDc-NW-8BW">
             <objects>
                 <navigationController id="ANH-se-EXH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="1QB-M3-E17">
-                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="medium"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="1QB-M3-E17"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VLV-lc-IVA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,9 +323,7 @@
         <scene sceneID="H9u-Jm-Kwg">
             <objects>
                 <navigationController id="jYm-4h-ygz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="vtN-xY-b06">
-                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="medium"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="vtN-xY-b06"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h9G-WB-rBL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -338,7 +334,24 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQP-kG-Ay3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3841" y="-820"/>
+            <point key="canvasLocation" x="3936" y="-846"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PL5-9H-dcR">
+            <objects>
+                <navigationController id="eZl-5r-bM9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="doc.text.fill" catalog="system" id="apa-Yr-gA5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5XP-NK-yyk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T1d-t2-Ji7" kind="relationship" relationship="rootViewController" id="XSG-ui-wbk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWx-sV-2Zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5155" y="-846"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="wdz-8u-pGZ">
@@ -367,6 +380,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cg3-47-1ye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3841" y="-50"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YB2-t2-QM4">
+            <objects>
+                <viewController id="T1d-t2-Ji7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NF9-kV-0kV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DKj-fV-kJG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2wr-8k-teM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rxp-5l-FYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5135" y="-66"/>
         </scene>
         <!--WeightViewController-->
         <scene sceneID="L88-oJ-gD6">
@@ -823,6 +852,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
         <image name="edit" width="128" height="128"/>
         <image name="geometricblack" width="592" height="592"/>
         <image name="house" catalog="system" width="128" height="106"/>

@@ -27,9 +27,18 @@ class ProgressViewController: UIViewController {
         print("Tracking metric with progress controller = \(trackingMetric!)")
         loadProgress()
         
-        if trackerName == "Cold Shower" {
+        if trackingMetric == "cold" {
             let nib = UINib(nibName: ColdCollectionCell.identifier, bundle: nil)
             collectionView.register(nib, forCellWithReuseIdentifier: ColdCollectionCell.identifier)
+        } else if trackingMetric == "breathe"{
+            let nib = UINib(nibName: BreatheCollectionCell.identifier, bundle: nil)
+            collectionView.register(nib, forCellWithReuseIdentifier: BreatheCollectionCell.identifier)
+        } else if trackingMetric == "time"{
+            let nib = UINib(nibName: TimeNumberCollectionCell.identifier, bundle: nil)
+            collectionView.register(nib, forCellWithReuseIdentifier: TimeNumberCollectionCell.identifier)
+        } else if trackingMetric == "number" {
+            let nib = UINib(nibName: TimeNumberCollectionCell.identifier, bundle: nil)
+            collectionView.register(nib, forCellWithReuseIdentifier: TimeNumberCollectionCell.identifier)
         } else {
             let nib = UINib(nibName: ProgressCollectionCell.identifier, bundle: nil)
             collectionView.register(nib, forCellWithReuseIdentifier: ProgressCollectionCell.identifier)
@@ -45,56 +54,8 @@ class ProgressViewController: UIViewController {
     
     func loadProgress() {
         
-        if trackerName == "Cold Shower" {
-
-            db.collection("progress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
-                if let e = error {
-                    print("There was an issue retrieving data from Firestore. \(e)")
-                } else {
-                    if let snapshotDocuments = querySnapshot?.documents {
-
-                        progressLength = []
-                        for doc in snapshotDocuments {
-
-                            let data = doc.data()
-                            let currentTracker = trackerName!
-
-                            if let userData = data["UserEmail"] {
-                                let userEmailString = userData as! String
-
-                                if userEmailString == user?.email! {
-                                    if let trackerData = data["Tracker"] {
-                                        let trackerDataString = trackerData as! String
-
-//                                        if trackerDataString == "Cold Shower" {
-//
-//                                        } else if trackerDataString == "Pushup" {
-//                                        }
-                                        if trackerDataString == currentTracker {
-                                            let trackerSessionLength = data["LengthInSeconds"] as! String
-                                            let trackerDate = data["Date"] as! String
-
-                                            cellDate = trackerDate
-                                            progressLength.append(trackerSessionLength)
-
-                                        }
-
-                                        DispatchQueue.main.async() { [weak self] in
-                                                    self?.collectionView.reloadData()
-                                                }
-
-                                    }
-
-                                }
-                            }
-
-                        }
-
-                    }
-                }
-
-            }
-        } else if trackerName == "Deadlift" {
+        
+        if trackingMetric == "weight" {
             
             db.collection("weightProgress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
                 if let e = error {
@@ -137,6 +98,62 @@ class ProgressViewController: UIViewController {
                 }
             }
             
+        } else {
+
+            db.collection("progress").order(by: "TimeCreated").addSnapshotListener { [self] (querySnapshot, error) in
+                if let e = error {
+                    print("There was an issue retrieving data from Firestore. \(e)")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+
+                        progressLength = []
+                        for doc in snapshotDocuments {
+
+                            let data = doc.data()
+                            let currentTracker = trackerName!
+
+                            if let userData = data["UserEmail"] {
+                                let userEmailString = userData as! String
+
+                                if userEmailString == user?.email! {
+                                    if let trackerData = data["Tracker"] {
+                                        let trackerDataString = trackerData as! String
+
+//                                        if trackerDataString == "Cold Shower" {
+//
+//                                        } else if trackerDataString == "Pushup" {
+//                                        }
+                                        if trackerDataString == currentTracker {
+                                            
+                                            if trackingMetric! == "number" {
+                                                let trackerSessionLength = data["Number"] as! String
+                                                progressLength.append(trackerSessionLength)
+                                            } else {
+                                                let trackerSessionLength = data["LengthInSeconds"] as! String
+                                                progressLength.append(trackerSessionLength)
+                                            }
+                                            
+                                            let trackerDate = data["Date"] as! String
+                                            cellDate = trackerDate
+                                            
+
+                                        }
+
+                                        DispatchQueue.main.async() { [weak self] in
+                                                    self?.collectionView.reloadData()
+                                                }
+
+                                    }
+
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
         }
     }
     
@@ -190,10 +207,10 @@ extension ProgressViewController : UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if trackingMetric! == "cold" {
             return progressLength.count
-        } else if trackerName! == "Deadlift" {
+        } else if trackingMetric! == "weight" {
             return progressWeight.count
         } else {
-            return progressWeight.count
+            return progressLength.count
         }
         
     }
@@ -208,16 +225,16 @@ extension ProgressViewController : UICollectionViewDataSource, UICollectionViewD
             cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
             return cell
         } else if trackingMetric! == "number" {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
-            cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeNumberCollectionCell.identifier, for: indexPath) as! TimeNumberCollectionCell
+            cell.configure(with: progressLength[indexPath.row], with: cellDate, with: trackerName!, with: trackingMetric!)
             return cell
         } else if trackingMetric! == "time" {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
-            cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TimeNumberCollectionCell.identifier, for: indexPath) as! TimeNumberCollectionCell
+            cell.configure(with: progressLength[indexPath.row], with: cellDate, with: trackerName!, with: trackingMetric!)
             return cell
         } else if trackingMetric! == "breathe" {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell
-            cell.configure(with: progressWeight[indexPath.row], with: progressReps[indexPath.row], with: progressSets[indexPath.row], with: cellDate, with: trackerName!)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreatheCollectionCell.identifier, for: indexPath) as! BreatheCollectionCell
+            cell.configure(with: progressLength[indexPath.row], with: cellDate, with: trackerName!)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionCell.identifier, for: indexPath) as! ProgressCollectionCell

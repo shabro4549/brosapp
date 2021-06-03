@@ -32,6 +32,10 @@
 		FDD966372667181600654741 /* BreatheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966362667181600654741 /* BreatheViewController.swift */; };
 		FDD9663A2667182600654741 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966392667182600654741 /* NumberViewController.swift */; };
 		FDD9663D2667183400654741 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9663C2667183400654741 /* TimerViewController.swift */; };
+		FDD9664A266974AF00654741 /* BreatheCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD96648266974AF00654741 /* BreatheCollectionCell.swift */; };
+		FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD96649266974AF00654741 /* BreatheCollectionCell.xib */; };
+		FDD9665026697AD500654741 /* TimeNumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */; };
+		FDD9665126697AD500654741 /* TimeNumberCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		FDD966362667181600654741 /* BreatheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheViewController.swift; sourceTree = "<group>"; };
 		FDD966392667182600654741 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		FDD9663C2667183400654741 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		FDD96648266974AF00654741 /* BreatheCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheCollectionCell.swift; sourceTree = "<group>"; };
+		FDD96649266974AF00654741 /* BreatheCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreatheCollectionCell.xib; sourceTree = "<group>"; };
+		FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNumberCollectionCell.swift; sourceTree = "<group>"; };
+		FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNumberCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,10 @@
 				FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */,
 				FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */,
 				FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */,
+				FDD96648266974AF00654741 /* BreatheCollectionCell.swift */,
+				FDD96649266974AF00654741 /* BreatheCollectionCell.xib */,
+				FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */,
+				FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */,
 			);
 			path = brosapp;
 			sourceTree = "<group>";
@@ -229,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */,
+				FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */,
+				FDD9665126697AD500654741 /* TimeNumberCollectionCell.xib in Resources */,
 				FD46B4EE263CDF83007BD5C4 /* LaunchScreen.storyboard in Resources */,
 				FD304BBE2640A2D700C82F40 /* GoogleService-Info.plist in Resources */,
 				FD9B5B90265F0B0A002E867C /* ProgressCollectionCell.xib in Resources */,
@@ -294,11 +308,13 @@
 				FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */,
 				FDD966372667181600654741 /* BreatheViewController.swift in Sources */,
 				FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */,
+				FDD9664A266974AF00654741 /* BreatheCollectionCell.swift in Sources */,
 				FDD7E6432640D60F00C9E202 /* AccountViewController.swift in Sources */,
 				FD46B4E6263CDF81007BD5C4 /* ViewController.swift in Sources */,
 				FD46B4E2263CDF81007BD5C4 /* AppDelegate.swift in Sources */,
 				FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */,
 				FD9B5B8A265879F9002E867C /* WeightViewController.swift in Sources */,
+				FDD9665026697AD500654741 /* TimeNumberCollectionCell.swift in Sources */,
 				FDD9663D2667183400654741 /* TimerViewController.swift in Sources */,
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
 				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
