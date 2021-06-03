@@ -26,8 +26,13 @@ class WeightViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        
-
+        if weightTextField.text == "" {
+            weightTextField.placeholder = "Enter a weight"
+        } else if repsTextField.text == "" {
+            repsTextField.placeholder = "Enter reps"
+        } else if setsTextField.text == "" {
+            setsTextField.placeholder = "Enter sets"
+        } else {
             let date = Date()
             let sortingDate = date.timeIntervalSince1970
             
@@ -53,6 +58,7 @@ class WeightViewController: UIViewController {
             ])
             
             navigationController?.popViewController(animated: true)
+        }
         
     }
     
