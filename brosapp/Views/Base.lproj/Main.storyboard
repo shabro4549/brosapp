@@ -556,7 +556,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhG-hw-mle">
                                 <rect key="frame" x="108" y="348" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.52156862745098043" green="0.69803921568627447" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.52156862745098043" green="0.69803921568627447" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YE-qC-qEU">
                                 <rect key="frame" x="98" y="711" width="219" height="45"/>
@@ -597,8 +597,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 : 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-uT-ak2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 0 : 0 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-uT-ak2">
                                 <rect key="frame" x="114" y="174" width="187" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75t-wj-xAZ">
+                                <rect key="frame" x="20" y="203" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -612,6 +619,7 @@
                     <connections>
                         <outlet property="breatheLabel" destination="oxI-u3-GWA" id="QDI-1D-MDy"/>
                         <outlet property="breatheView" destination="dhG-hw-mle" id="4co-kY-UNk"/>
+                        <outlet property="feedbackLabel" destination="75t-wj-xAZ" id="YgQ-1T-ltO"/>
                         <outlet property="startButton" destination="0Zm-ty-7HV" id="KHb-o2-QvB"/>
                         <outlet property="timerLabel" destination="XA3-uT-ak2" id="5c2-gx-vRi"/>
                     </connections>

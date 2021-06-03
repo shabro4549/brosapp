@@ -19,6 +19,7 @@ class BreatheViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var breatheLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var feedbackLabel: UILabel!
     
     var timer = Timer()
     var count = 0
@@ -30,13 +31,13 @@ class BreatheViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        feedbackLabel.alpha = 0
         // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-            
+        
         breatheView.layer.cornerRadius = breatheView.frame.size.width/2
         breatheView.clipsToBounds = true
         
@@ -110,6 +111,7 @@ class BreatheViewController: UIViewController {
 //        breatheView.alpha = 0.25
 //        breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
 //        breatheView.layer.cornerRadius = breatheView.frame.size.width/2
+        feedbackLabel.alpha = 0
         breatheView.alpha = 0.25
         breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
         breatheView.layer.cornerRadius = breatheView.frame.size.width/2
@@ -202,6 +204,11 @@ class BreatheViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
+        if timerLabel.text == "0 0 : 0 0" {
+            feedbackLabel.alpha = 1
+            feedbackLabel.text = "No session has been timed"
+            feedbackLabel.textColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        } else {
         let date = Date()
         let sortingDate = date.timeIntervalSince1970
         
@@ -227,6 +234,7 @@ class BreatheViewController: UIViewController {
             }
         
         navigationController?.popViewController(animated: true)
+        }
     }
     
     /*
