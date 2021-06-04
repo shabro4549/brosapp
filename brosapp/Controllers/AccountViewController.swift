@@ -139,8 +139,6 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(with: usersTrackers[indexPath.row].trackerName)
         return cell
         
-        
-        
 //        for tracker in usersTrackers {
 //            if tracker.user == Auth.auth().currentUser?.email {
 //                usersGoal.append(tracker.trackerName)
@@ -150,7 +148,72 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
 //        cell.configure(with: usersTrackers[indexPath.row])
 
     }
-}
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let currentTrackerName = usersTrackers[indexPath.row].trackerName
+        if editingStyle == .delete {
+
+            db.collection("progress").getDocuments { (querySnapshot, error) in
+                if let e = error {
+                    print("there was an error retrieving documents to delete in trackers... \(e)")
+                } else {
+                    
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            if let trackerData = data["Tracker"] as? String {
+                                if trackerData == currentTrackerName {
+                                    self.db.collection("progress").document("\(doc.documentID)").delete()
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+
+
+                }
+            }
+            
+            db.collection("trackers").getDocuments { (querySnapshot, error) in
+                if let e = error {
+                    print("there was an error retrieving documents to delete in trackers... \(e)")
+                } else {
+                    
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            
+                            let data = doc.data()
+                            
+                            if let trackerData = data["Name of Tracker"] as? String {
+                                if trackerData == self.usersTrackers[indexPath.row].trackerName {
+                                    self.db.collection("trackers").document("\(doc.documentID)").delete()
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+
+
+                }
+            }
+            
+            
+            
+            
+
+            }
+            
+        }
+    }
+
 
 //MARK: - TableViewCell Delegate
 

@@ -301,10 +301,12 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.11)
+  - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
+  - SwipeCellKit
 
 SPEC REPOS:
   trunk:
@@ -323,6 +325,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -340,7 +343,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 33979c56adf442b6de2b4e51bed461be3a3ddafa
+PODFILE CHECKSUM: c9097f73b2a08cd189d732f9420c51dfd2623e22
 
 COCOAPODS: 1.10.0

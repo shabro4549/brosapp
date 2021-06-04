@@ -7,6 +7,7 @@ target 'brosapp' do
   # Pods for brosapp
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'SwipeCellKit'
 
 
 end
