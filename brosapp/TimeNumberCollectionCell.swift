@@ -12,8 +12,9 @@ class TimeNumberCollectionCell: UICollectionViewCell {
     static let identifier = "TimeNumberCollectionCell"
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
-    func configure(with length: String, with date: String, with tracker: String, with metric: String) {
+    @IBOutlet weak var checkedIndicator: UIImageView!
+
+    func configure(with length: String, with date: String, with created: String, with selected: Bool, with metric: String) {
         if metric == "number" {
             progressLabel.text = length
         } else {
@@ -30,13 +31,20 @@ class TimeNumberCollectionCell: UICollectionViewCell {
             }
         }
         
-        
         dateLabel.text = date
+        
+        if selected == false {
+            checkedIndicator.isHidden = true
+        } else {
+            checkedIndicator.isHidden = false
+        }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        checkedIndicator.isHidden = true
     }
 
 }

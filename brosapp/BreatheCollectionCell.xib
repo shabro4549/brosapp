@@ -35,16 +35,23 @@
                         <color key="textColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-OO-0QG">
+                        <rect key="frame" x="54" y="20.5" width="20" height="19"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="6Ys-Cj-QDW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="49" id="0NB-QH-Hht"/>
+                <constraint firstItem="Y0s-OO-0QG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="54" id="Cg1-oP-JDn"/>
                 <constraint firstItem="Qf3-70-r3W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="22" id="H1V-G3-elf"/>
                 <constraint firstItem="Qf3-70-r3W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="98" id="Ryb-Mj-vAI"/>
                 <constraint firstAttribute="trailing" secondItem="7v0-Sj-AcK" secondAttribute="trailing" constant="5" id="b7z-wJ-XPB"/>
                 <constraint firstItem="6Ys-Cj-QDW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="e2g-fg-Nf2"/>
+                <constraint firstAttribute="bottom" secondItem="Y0s-OO-0QG" secondAttribute="bottom" constant="88" id="f9r-vk-CUJ"/>
+                <constraint firstAttribute="trailing" secondItem="Y0s-OO-0QG" secondAttribute="trailing" constant="54" id="fVg-TO-Xye"/>
                 <constraint firstItem="7v0-Sj-AcK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="m54-BV-8I4"/>
+                <constraint firstItem="Y0s-OO-0QG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="nZG-Mu-UlT"/>
                 <constraint firstAttribute="trailing" secondItem="Qf3-70-r3W" secondAttribute="trailing" constant="22" id="q2s-Tv-8AX"/>
                 <constraint firstAttribute="bottom" secondItem="Qf3-70-r3W" secondAttribute="bottom" constant="20" id="qGm-Lh-I5m"/>
                 <constraint firstAttribute="bottom" secondItem="7v0-Sj-AcK" secondAttribute="bottom" constant="5" id="syV-9D-e6c"/>
@@ -54,6 +61,7 @@
             </constraints>
             <size key="customSize" width="142" height="128"/>
             <connections>
+                <outlet property="checkedIndicator" destination="Y0s-OO-0QG" id="aaN-hI-Bp6"/>
                 <outlet property="dateLabel" destination="Qf3-70-r3W" id="48p-9s-HAO"/>
                 <outlet property="progressLabel" destination="6Ys-Cj-QDW" id="zFK-eb-Th7"/>
             </connections>
@@ -61,6 +69,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="sphere" width="512" height="512"/>
     </resources>
 </document>

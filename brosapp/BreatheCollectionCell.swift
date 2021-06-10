@@ -13,10 +13,10 @@ class BreatheCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var checkedIndicator: UIImageView!
     
     
-    func configure(with length: String, with date: String, with tracker: String) {
-//        print("the tracker in the cell is: \(tracker)")
+    func configure(with length: String, with date: String, with created: String, with selected: Bool) {
             if let lengthToDouble = Double(length) {
                 if lengthToDouble <= 59 {
                     progressLabel.text = "\(length)s"
@@ -29,13 +29,20 @@ class BreatheCollectionCell: UICollectionViewCell {
                 }
             }
         
-        
         dateLabel.text = date
+        
+        if selected == false {
+            checkedIndicator.isHidden = true
+        } else {
+            checkedIndicator.isHidden = false
+        }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        checkedIndicator.isHidden = true
     }
 
 }

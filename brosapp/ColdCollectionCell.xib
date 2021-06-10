@@ -35,24 +35,32 @@
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wtn-CJ-HXr">
+                        <rect key="frame" x="54" y="35.5" width="20" height="19"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="QN9-zo-17Y" secondAttribute="trailing" id="2zX-eP-CXz"/>
+                <constraint firstAttribute="bottom" secondItem="Wtn-CJ-HXr" secondAttribute="bottom" constant="73" id="3Ds-1g-x3t"/>
+                <constraint firstAttribute="trailing" secondItem="Wtn-CJ-HXr" secondAttribute="trailing" constant="54" id="3rU-AR-Upx"/>
                 <constraint firstAttribute="bottom" secondItem="qT7-ql-jra" secondAttribute="bottom" constant="5" id="4Wm-HB-qNb"/>
                 <constraint firstItem="QN9-zo-17Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="78L-lj-MWu"/>
+                <constraint firstItem="Wtn-CJ-HXr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="54" id="7L3-vz-Ycg"/>
                 <constraint firstItem="qT7-ql-jra" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="8aP-XD-Cdx"/>
                 <constraint firstItem="glU-ET-CpN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NaS-XO-vLN"/>
                 <constraint firstAttribute="bottom" secondItem="glU-ET-CpN" secondAttribute="bottom" constant="16" id="OZc-xE-tGR"/>
                 <constraint firstAttribute="trailing" secondItem="qT7-ql-jra" secondAttribute="trailing" constant="5" id="SAV-68-elc"/>
                 <constraint firstAttribute="trailing" secondItem="glU-ET-CpN" secondAttribute="trailing" id="Sg7-Ah-FoX"/>
+                <constraint firstItem="Wtn-CJ-HXr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="35" id="T2o-pm-ldk"/>
                 <constraint firstItem="glU-ET-CpN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="102" id="Zmh-PK-xmL"/>
                 <constraint firstAttribute="bottom" secondItem="QN9-zo-17Y" secondAttribute="bottom" constant="35" id="bdr-8T-hDa"/>
                 <constraint firstItem="qT7-ql-jra" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="hUz-AS-B8Y"/>
                 <constraint firstItem="QN9-zo-17Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="67" id="vse-8h-Vkb"/>
             </constraints>
             <connections>
+                <outlet property="checkedIndicator" destination="Wtn-CJ-HXr" id="EzZ-7w-MR9"/>
                 <outlet property="dateLabel" destination="glU-ET-CpN" id="CFv-Tc-ZdY"/>
                 <outlet property="progressLabel" destination="QN9-zo-17Y" id="66d-VO-RxF"/>
             </connections>
@@ -60,6 +68,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="drop (1)" width="512" height="512"/>
     </resources>
 </document>

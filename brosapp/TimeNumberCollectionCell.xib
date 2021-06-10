@@ -36,24 +36,32 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6VR-td-JMm">
+                        <rect key="frame" x="95" y="12.5" width="20" height="19"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="Zm9-oM-iyR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="3XI-PT-c3i"/>
                 <constraint firstAttribute="bottom" secondItem="NLQ-Sn-jHP" secondAttribute="bottom" constant="5" id="4dA-S9-vGI"/>
+                <constraint firstAttribute="bottom" secondItem="6VR-td-JMm" secondAttribute="bottom" constant="96" id="BT1-tT-bWt"/>
                 <constraint firstAttribute="trailing" secondItem="NLQ-Sn-jHP" secondAttribute="trailing" constant="5" id="CL9-F7-TEZ"/>
                 <constraint firstItem="NLQ-Sn-jHP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="HQC-Ot-0ka"/>
                 <constraint firstItem="NLQ-Sn-jHP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Joi-Df-WF3"/>
                 <constraint firstAttribute="bottom" secondItem="ona-dE-KCY" secondAttribute="bottom" constant="45" id="MfW-Sf-4PV"/>
+                <constraint firstAttribute="trailing" secondItem="6VR-td-JMm" secondAttribute="trailing" constant="13" id="PD3-Qw-NGD"/>
                 <constraint firstAttribute="trailing" secondItem="Zm9-oM-iyR" secondAttribute="trailing" constant="5" id="ZgX-Yy-ok0"/>
                 <constraint firstAttribute="trailing" secondItem="ona-dE-KCY" secondAttribute="trailing" constant="5" id="g2y-km-PYf"/>
                 <constraint firstItem="ona-dE-KCY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="55" id="jbH-pG-gdg"/>
                 <constraint firstItem="Zm9-oM-iyR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="102" id="mWb-NU-xAZ"/>
+                <constraint firstItem="6VR-td-JMm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="95" id="mei-AG-04a"/>
                 <constraint firstAttribute="bottom" secondItem="Zm9-oM-iyR" secondAttribute="bottom" constant="16" id="qdr-A2-cUx"/>
                 <constraint firstItem="ona-dE-KCY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="sjw-cP-vsO"/>
+                <constraint firstItem="6VR-td-JMm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="tsY-LD-ASI"/>
             </constraints>
             <connections>
+                <outlet property="checkedIndicator" destination="6VR-td-JMm" id="lfD-Bl-E8L"/>
                 <outlet property="dateLabel" destination="Zm9-oM-iyR" id="ujc-Ov-UVt"/>
                 <outlet property="progressLabel" destination="ona-dE-KCY" id="rtZ-1h-QNN"/>
             </connections>
@@ -61,6 +69,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square2" width="403.39999389648438" height="405.10000610351562"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

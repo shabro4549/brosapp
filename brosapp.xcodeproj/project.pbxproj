@@ -36,6 +36,7 @@
 		FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD96649266974AF00654741 /* BreatheCollectionCell.xib */; };
 		FDD9665026697AD500654741 /* TimeNumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */; };
 		FDD9665126697AD500654741 /* TimeNumberCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */; };
+		FDD9666D26729F8D00654741 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9666C26729F8D00654741 /* Progress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		FDD96649266974AF00654741 /* BreatheCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreatheCollectionCell.xib; sourceTree = "<group>"; };
 		FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNumberCollectionCell.swift; sourceTree = "<group>"; };
 		FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNumberCollectionCell.xib; sourceTree = "<group>"; };
+		FDD9666C26729F8D00654741 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FDB724242641F71900985FE8 /* Tracker.swift */,
+				FDD9666C26729F8D00654741 /* Progress.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				FD304BB62640967200C82F40 /* LoginViewController.swift in Sources */,
 				FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */,
 				FDD966372667181600654741 /* BreatheViewController.swift in Sources */,
+				FDD9666D26729F8D00654741 /* Progress.swift in Sources */,
 				FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */,
 				FDD9664A266974AF00654741 /* BreatheCollectionCell.swift in Sources */,
 				FDD7E6432640D60F00C9E202 /* AccountViewController.swift in Sources */,

@@ -20,31 +20,33 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-YC-Awh">
                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="128" id="5fb-WI-2M9"/>
-                            <constraint firstAttribute="width" constant="128" id="D3V-ww-fdn"/>
+                            <constraint firstAttribute="width" constant="128" id="ROF-T4-lT7"/>
+                            <constraint firstAttribute="height" constant="128" id="bk2-Oo-9eA"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-tV-EIb">
-                        <rect key="frame" x="16" y="30" width="96" height="26"/>
-                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="14"/>
-                        <color key="textColor" systemColor="systemGray6Color"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9j-dc-3cD">
-                        <rect key="frame" x="16" y="76" width="96" height="22"/>
+                        <rect key="frame" x="12" y="76" width="104" height="21"/>
                         <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="14"/>
                         <color key="textColor" systemColor="systemGray6Color"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymL-vv-NIk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymL-vv-NIk">
                         <rect key="frame" x="16" y="102" width="96" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhB-mD-rNg">
-                        <rect key="frame" x="16" y="53" width="96" height="23"/>
+                        <rect key="frame" x="12" y="54" width="104" height="20"/>
+                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="14"/>
+                        <color key="textColor" systemColor="systemGray6Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8cD-UV-Z3E">
+                        <rect key="frame" x="98" y="10" width="20" height="19"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-tV-EIb">
+                        <rect key="frame" x="12" y="32" width="104" height="20"/>
                         <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="14"/>
                         <color key="textColor" systemColor="systemGray6Color"/>
                         <nil key="highlightedColor"/>
@@ -54,33 +56,43 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="GhB-mD-rNg" secondAttribute="bottom" constant="52" id="0hP-vi-EoX"/>
-                <constraint firstAttribute="bottom" secondItem="nu9-YC-Awh" secondAttribute="bottom" id="0nG-s4-1Vr"/>
-                <constraint firstItem="BOG-tV-EIb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="5KW-gE-vzE"/>
-                <constraint firstAttribute="trailing" secondItem="nu9-YC-Awh" secondAttribute="trailing" id="5bb-rP-Mgx"/>
-                <constraint firstAttribute="bottom" secondItem="BOG-tV-EIb" secondAttribute="bottom" constant="72" id="7sl-IQ-E50"/>
-                <constraint firstItem="J9j-dc-3cD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="76" id="8BR-g0-s2l"/>
-                <constraint firstItem="GhB-mD-rNg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="53" id="CVg-rJ-9Yo"/>
-                <constraint firstItem="BOG-tV-EIb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="Iuo-dK-gLu"/>
-                <constraint firstAttribute="trailing" secondItem="GhB-mD-rNg" secondAttribute="trailing" constant="16" id="Lsj-Ac-t9N"/>
-                <constraint firstItem="nu9-YC-Awh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OzE-YC-0lT"/>
-                <constraint firstAttribute="trailing" secondItem="BOG-tV-EIb" secondAttribute="trailing" constant="16" id="Vpw-Pa-K38"/>
-                <constraint firstAttribute="bottom" secondItem="J9j-dc-3cD" secondAttribute="bottom" constant="30" id="XTE-N5-8K2"/>
-                <constraint firstItem="J9j-dc-3cD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="fJr-oG-zGv"/>
-                <constraint firstAttribute="trailing" secondItem="J9j-dc-3cD" secondAttribute="trailing" constant="16" id="fmA-id-S0h"/>
-                <constraint firstItem="nu9-YC-Awh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lKj-Gh-8ov"/>
-                <constraint firstItem="GhB-mD-rNg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="zuh-BW-kTu"/>
+                <constraint firstItem="GhB-mD-rNg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="2Fr-HA-oZ8"/>
+                <constraint firstItem="nu9-YC-Awh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3UJ-ML-O4D"/>
+                <constraint firstItem="BOG-tV-EIb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="32" id="AQu-X1-uIG"/>
+                <constraint firstItem="ymL-vv-NIk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="B2r-Bz-YpR"/>
+                <constraint firstAttribute="trailing" secondItem="8cD-UV-Z3E" secondAttribute="trailing" constant="10" id="F9K-Xk-Lpl"/>
+                <constraint firstAttribute="bottom" secondItem="ymL-vv-NIk" secondAttribute="bottom" constant="14" id="LnO-5I-PNJ"/>
+                <constraint firstItem="GhB-mD-rNg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="54" id="MJ1-1Y-IYz"/>
+                <constraint firstItem="J9j-dc-3cD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="PFl-He-IcE"/>
+                <constraint firstAttribute="bottom" secondItem="BOG-tV-EIb" secondAttribute="bottom" constant="76" id="PmA-uh-k6N"/>
+                <constraint firstItem="ymL-vv-NIk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="102" id="UxW-h7-fuK"/>
+                <constraint firstItem="nu9-YC-Awh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zam-Fj-5UV"/>
+                <constraint firstAttribute="trailing" secondItem="BOG-tV-EIb" secondAttribute="trailing" constant="12" id="azN-Ki-rf0"/>
+                <constraint firstAttribute="bottom" secondItem="8cD-UV-Z3E" secondAttribute="bottom" constant="98.5" id="bTf-Ru-hxg"/>
+                <constraint firstItem="8cD-UV-Z3E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="98" id="edW-SE-E4j"/>
+                <constraint firstAttribute="trailing" secondItem="nu9-YC-Awh" secondAttribute="trailing" id="ja5-eU-RUl"/>
+                <constraint firstItem="BOG-tV-EIb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="kaD-dU-m3k"/>
+                <constraint firstAttribute="bottom" secondItem="GhB-mD-rNg" secondAttribute="bottom" constant="54" id="mJS-YN-x0a"/>
+                <constraint firstAttribute="trailing" secondItem="ymL-vv-NIk" secondAttribute="trailing" constant="16" id="maK-QR-9ia"/>
+                <constraint firstAttribute="bottom" secondItem="J9j-dc-3cD" secondAttribute="bottom" constant="31" id="pLP-ih-FYp"/>
+                <constraint firstAttribute="bottom" secondItem="nu9-YC-Awh" secondAttribute="bottom" id="pgs-zi-8jq"/>
+                <constraint firstAttribute="trailing" secondItem="J9j-dc-3cD" secondAttribute="trailing" constant="12" id="qL6-aZ-GcF"/>
+                <constraint firstAttribute="trailing" secondItem="GhB-mD-rNg" secondAttribute="trailing" constant="12" id="rqY-4i-NN5"/>
+                <constraint firstItem="8cD-UV-Z3E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9.5" id="tGH-5d-wKA"/>
+                <constraint firstItem="J9j-dc-3cD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="76" id="tac-w9-QJG"/>
             </constraints>
             <connections>
+                <outlet property="checkedIndicator" destination="8cD-UV-Z3E" id="eCh-0j-bts"/>
                 <outlet property="dateLabel" destination="ymL-vv-NIk" id="E4c-cx-90i"/>
                 <outlet property="progressLabel" destination="GhB-mD-rNg" id="OBr-kz-miB"/>
                 <outlet property="repsLabel" destination="BOG-tV-EIb" id="aKX-0v-gML"/>
                 <outlet property="setsLabel" destination="J9j-dc-3cD" id="g4e-B3-0n8"/>
             </connections>
-            <point key="canvasLocation" x="-155.07246376811597" y="100.44642857142857"/>
+            <point key="canvasLocation" x="-247.82608695652175" y="51.5625"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square" width="512" height="512"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
