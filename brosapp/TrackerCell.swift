@@ -14,8 +14,7 @@ protocol TrackerCellDelegate: AnyObject {
 class TrackerCell: UITableViewCell {
     
     weak var delegate : TrackerCellDelegate?
-    
-//    @IBOutlet weak var trackerName: UILabel!
+
     @IBOutlet weak var trackerCellButton: UIButton!
     
     static let identifier = "TrackerCell"
@@ -29,15 +28,14 @@ class TrackerCell: UITableViewCell {
         delegate?.didTapButton(with: title)
     }
     
-        func configure(with title: String) {
-            self.title = title
-            trackerCellButton.setTitle(title, for: .normal)
-        }
+    func configure(with title: String) {
+        self.title = title
+        trackerCellButton.setTitle(title, for: .normal)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

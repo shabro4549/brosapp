@@ -37,6 +37,8 @@
 		FDD9665026697AD500654741 /* TimeNumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */; };
 		FDD9665126697AD500654741 /* TimeNumberCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */; };
 		FDD9666D26729F8D00654741 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9666C26729F8D00654741 /* Progress.swift */; };
+		FDD966752672DD8800654741 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966732672DD8800654741 /* ResultsCell.swift */; };
+		FDD966762672DD8800654741 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD966742672DD8800654741 /* ResultsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeNumberCollectionCell.swift; sourceTree = "<group>"; };
 		FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeNumberCollectionCell.xib; sourceTree = "<group>"; };
 		FDD9666C26729F8D00654741 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		FDD966732672DD8800654741 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		FDD966742672DD8800654741 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				FDD96649266974AF00654741 /* BreatheCollectionCell.xib */,
 				FDD9664E26697AD500654741 /* TimeNumberCollectionCell.swift */,
 				FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */,
+				FDD966732672DD8800654741 /* ResultsCell.swift */,
+				FDD966742672DD8800654741 /* ResultsCell.xib */,
 			);
 			path = brosapp;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			files = (
 				FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */,
 				FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */,
+				FDD966762672DD8800654741 /* ResultsCell.xib in Resources */,
 				FDD9665126697AD500654741 /* TimeNumberCollectionCell.xib in Resources */,
 				FD46B4EE263CDF83007BD5C4 /* LaunchScreen.storyboard in Resources */,
 				FD304BBE2640A2D700C82F40 /* GoogleService-Info.plist in Resources */,
@@ -321,6 +328,7 @@
 				FDD9665026697AD500654741 /* TimeNumberCollectionCell.swift in Sources */,
 				FDD9663D2667183400654741 /* TimerViewController.swift in Sources */,
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
+				FDD966752672DD8800654741 /* ResultsCell.swift in Sources */,
 				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,
 				FDB724252641F71900985FE8 /* Tracker.swift in Sources */,

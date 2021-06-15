@@ -348,6 +348,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A9U-rM-s1q">
+                                <rect key="frame" x="0.0" y="207" width="414" height="606"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZkP-Us-ojH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -355,11 +360,12 @@
                     <navigationItem key="navigationItem" id="Kt5-eh-6Hx"/>
                     <connections>
                         <outlet property="nameLabel" destination="J8D-Wt-07h" id="ncj-zu-ldb"/>
+                        <outlet property="tableView" destination="A9U-rM-s1q" id="Dqs-zs-klD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cg3-47-1ye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3841" y="-50"/>
+            <point key="canvasLocation" x="3840.579710144928" y="-50.223214285714285"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YB2-t2-QM4">
