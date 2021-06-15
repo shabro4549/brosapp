@@ -107,6 +107,7 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath) as! ResultsCell
+        cell.configure(with: usersTrackers[indexPath.row].trackerName)
         return cell
     }
     

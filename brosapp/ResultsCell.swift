@@ -13,6 +13,11 @@ class ResultsCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "TrackerCell", bundle: nil)
     }
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    func configure(with trackerName: String) {
+        nameLabel.text = trackerName
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

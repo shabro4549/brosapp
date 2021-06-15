@@ -17,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="402" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9co-gf-ox2">
-                        <rect key="frame" x="184" y="4" width="35" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9co-gf-ox2">
+                        <rect key="frame" x="20" y="4" width="362" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="14"/>
                         <color key="textColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -32,6 +32,9 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="9co-gf-ox2" id="LBm-mI-9gR"/>
+            </connections>
             <point key="canvasLocation" x="-155.07246376811597" y="92.410714285714278"/>
         </tableViewCell>
     </objects>
