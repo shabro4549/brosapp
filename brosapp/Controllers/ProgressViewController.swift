@@ -15,14 +15,14 @@ class ProgressViewController: UIViewController {
     var user = Auth.auth().currentUser
     let db = Firestore.firestore()
     @IBOutlet weak var collectionView: UICollectionView!
-    var progressLength: [String] = []
-    var progressWeight: [String] = []
-    var progressReps: [String] = []
-    var progressSets: [String] = []
-    var cellDate = ""
-    var selectedCount = 0
-    var cellDatesArray: [String] = []
-    var datesOfClickedCell: [String] = []
+//    var progressLength: [String] = []
+//    var progressWeight: [String] = []
+//    var progressReps: [String] = []
+//    var progressSets: [String] = []
+//    var cellDate = ""
+//    var selectedCount = 0
+//    var cellDatesArray: [String] = []
+//    var datesOfClickedCell: [String] = []
     var progressCells: [Progress] = []
 
     
