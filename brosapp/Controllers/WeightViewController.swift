@@ -18,10 +18,13 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var setsTextField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
+        doneButton.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     

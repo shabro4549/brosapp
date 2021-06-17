@@ -20,6 +20,8 @@ class BreatheViewController: UIViewController {
     @IBOutlet weak var breatheLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     var timer = Timer()
     var count = 0
@@ -32,6 +34,12 @@ class BreatheViewController: UIViewController {
         super.viewDidLoad()
         
         feedbackLabel.alpha = 0
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
+        doneButton.clipsToBounds = true
+        startButton.layer.cornerRadius = startButton.frame.height/2
+        startButton.clipsToBounds = true
+        resetButton.layer.cornerRadius = resetButton.frame.height/2
+        resetButton.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -47,8 +55,8 @@ class BreatheViewController: UIViewController {
     @objc func animate() {
         if animationStop == 0 {
             UIView.animate(withDuration: 4) {
-                    self.breatheLabel.text = "Breathe in"
-                    self.breatheView.frame = CGRect(x: 108, y: 348, width: 200, height: 200)
+                    self.breatheLabel.text = "Breathe In"
+                    self.breatheView.frame = CGRect(x: 108, y: 291, width: 200, height: 200)
                     self.breatheView.layer.cornerRadius = self.breatheView.frame.size.width/2
                     self.breatheView.alpha = 1
             } completion: { (done) in
@@ -65,7 +73,7 @@ class BreatheViewController: UIViewController {
             }
         } else {
           breatheLabel.text = "Breathe"
-          breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
+          breatheView.frame = CGRect(x: 199, y: 369, width: 30, height: 30)
           breatheView.layer.cornerRadius = self.breatheView.frame.size.width/2
           breatheView.alpha = 0.25
         }
@@ -76,7 +84,7 @@ class BreatheViewController: UIViewController {
         if animationStop == 0 {
             UIView.animate(withDuration: 8) {
 //                if self.animationStop == 0 {
-                    self.breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
+                    self.breatheView.frame = CGRect(x: 199, y: 369, width: 30, height: 30)
                     self.breatheView.layer.cornerRadius = self.breatheView.frame.size.width/2
                     self.breatheLabel.text = "Breathe Out"
                     self.breatheView.alpha = 0.25
@@ -100,7 +108,7 @@ class BreatheViewController: UIViewController {
             
         } else {
             breatheLabel.text = "Breathe"
-            breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
+            breatheView.frame = CGRect(x: 199, y: 369, width: 30, height: 30)
             breatheView.layer.cornerRadius = self.breatheView.frame.size.width/2
             breatheView.alpha = 0.25
         }
@@ -113,7 +121,7 @@ class BreatheViewController: UIViewController {
 //        breatheView.layer.cornerRadius = breatheView.frame.size.width/2
         feedbackLabel.alpha = 0
         breatheView.alpha = 0.25
-        breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
+        breatheView.frame = CGRect(x: 199, y: 369, width: 30, height: 30)
         breatheView.layer.cornerRadius = breatheView.frame.size.width/2
         
         if(timerCounting) {
@@ -123,7 +131,8 @@ class BreatheViewController: UIViewController {
             timerCounting = false
             timer.invalidate()
             startButton.setTitle("Start", for: .normal)
-            startButton.setTitleColor(UIColor.green, for: .normal)
+//            startButton.setTitleColor(UIColor.green, for: .normal)
+            startButton.backgroundColor = #colorLiteral(red: 0.4275401831, green: 0.5684338808, blue: 0.4558522105, alpha: 1)
             animationStop = 1
             
         } else {
@@ -133,7 +142,8 @@ class BreatheViewController: UIViewController {
             animationStop = 0
             timerCounting = true
             startButton.setTitle("Stop", for: .normal)
-            startButton.setTitleColor(UIColor.red, for: .normal)
+            startButton.backgroundColor = #colorLiteral(red: 0.5019607843, green: 0.2196078431, blue: 0.2235294118, alpha: 1)
+//            startButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
 
@@ -187,7 +197,7 @@ class BreatheViewController: UIViewController {
 //        UIView.AnimationOptions.remove()
         animationStop = 1
         breatheView.alpha = 0.25
-        breatheView.frame = CGRect(x: 192, y: 433, width: 30, height: 30)
+        breatheView.frame = CGRect(x: 199, y: 369, width: 30, height: 30)
         breatheView.layer.cornerRadius = breatheView.frame.size.width/2
         
 //        UIView.setAnimationsEnabled(false)

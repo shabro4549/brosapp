@@ -19,7 +19,9 @@ class ColdViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
     
     var timer = Timer()
     var count = 0
@@ -31,9 +33,13 @@ class ColdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Tracker name made it to timer view controller: \(trackerTitle!)")
-//        print(user?.email)
-        // Do any additional setup after loading the view.
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
+        doneButton.clipsToBounds = true
+        startStopButton.layer.cornerRadius = startStopButton.frame.height/2
+        startStopButton.clipsToBounds = true
+        resetButton.layer.cornerRadius = resetButton.frame.height/2
+        resetButton.clipsToBounds = true
+
     }
     
     @IBAction func startStopPressed(_ sender: Any) {
@@ -43,15 +49,17 @@ class ColdViewController: UIViewController {
             timerCounting = false
             timer.invalidate()
             startStopButton.setTitle("Start", for: .normal)
+            startStopButton.backgroundColor = #colorLiteral(red: 0.4275401831, green: 0.5684338808, blue: 0.4558522105, alpha: 1)
             introLabel.text = "Are you ready?"
             introLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            startStopButton.setTitleColor(UIColor.green, for: .normal)
+//            startStopButton.setTitleColor(UIColor.green, for: .normal)
             
         } else {
             timerCounting = true
             startStopButton.setTitle("Stop", for: .normal)
+            startStopButton.backgroundColor = #colorLiteral(red: 0.5019607843, green: 0.2196078431, blue: 0.2235294118, alpha: 1)
             introLabel.text = "Prepare to feel refreshed!"
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+//            startStopButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
     }

@@ -12,7 +12,14 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var loginButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loginButton.layer.cornerRadius = loginButton.frame.height/2
+        loginButton.clipsToBounds = true
+    }
     
     @IBAction func loginPressed(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {

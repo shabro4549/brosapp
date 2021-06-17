@@ -18,6 +18,10 @@ class NumberViewController: UIViewController {
     @IBOutlet weak var numberLabel: UITextField!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,10 @@ class NumberViewController: UIViewController {
         numberLabel.text = "0"
         numberLabel.keyboardType = .numberPad
         feedbackLabel.alpha = 0
+        titleLabel.text = "\(trackerTitle!)"
+        questionLabel.text = "How many \(trackerTitle!) have you completed today?"
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
+        doneButton.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     

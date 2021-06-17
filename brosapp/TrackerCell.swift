@@ -36,6 +36,8 @@ class TrackerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        trackerCellButton.layer.cornerRadius = trackerCellButton.frame.height/2
+        trackerCellButton.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

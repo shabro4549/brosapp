@@ -16,6 +16,8 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     let db = Firestore.firestore()
     
@@ -28,24 +30,28 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titleLabel.text = "\(trackerTitle!)"
+        doneButton.layer.cornerRadius = doneButton.frame.height/2
+        doneButton.clipsToBounds = true
+        startStopButton.layer.cornerRadius = startStopButton.frame.height/2
+        startStopButton.clipsToBounds = true
+        resetButton.layer.cornerRadius = resetButton.frame.height/2
+        resetButton.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
     @IBAction func startStopPressed(_ sender: Any) {
-        titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        titleLabel.text = "Timer"
         
         if(timerCounting) {
             timerCounting = false
             timer.invalidate()
             startStopButton.setTitle("Start", for: .normal)
-            startStopButton.setTitleColor(UIColor.green, for: .normal)
-            
+            startStopButton.backgroundColor = #colorLiteral(red: 0.4275401831, green: 0.5684338808, blue: 0.4558522105, alpha: 1)
         } else {
             timerCounting = true
             startStopButton.setTitle("Stop", for: .normal)
-            startStopButton.setTitleColor(UIColor.red, for: .normal)
+            startStopButton.backgroundColor = #colorLiteral(red: 0.5019607843, green: 0.2196078431, blue: 0.2235294118, alpha: 1)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
     }
