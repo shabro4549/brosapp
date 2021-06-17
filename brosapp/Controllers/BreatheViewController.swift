@@ -210,7 +210,7 @@ class BreatheViewController: UIViewController {
         timer.invalidate()
         timerLabel.text = makeTimeString(hours: 0, minutes: 0, seconds: 0)
         startButton.setTitle("Start", for: .normal)
-        startButton.setTitleColor(UIColor.green, for: .normal)
+//        startButton.setTitleColor(UIColor.green, for: .normal)
     }
     
     @IBAction func donePressed(_ sender: Any) {

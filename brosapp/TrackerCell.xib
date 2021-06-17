@@ -22,7 +22,7 @@
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" systemColor="systemGray6Color"/>
                         </state>
                         <connections>
                             <action selector="didTapButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="X7K-Es-XxX"/>
@@ -31,7 +31,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right.circle.fill" catalog="system" id="wv9-P4-586">
                         <rect key="frame" x="312" y="35.5" width="60" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemGray6Color"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGray6Color"/>

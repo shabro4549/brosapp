@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
         
         registerButton.layer.cornerRadius = registerButton.frame.height/2
         registerButton.clipsToBounds = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     @IBAction func registerPressed(_ sender: Any) {
         if let email = emailTextField.text, let password = passwordTextField.text {

@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         
         loginButton.layer.cornerRadius = loginButton.frame.height/2
         loginButton.clipsToBounds = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func loginPressed(_ sender: Any) {
@@ -28,16 +29,15 @@ class LoginViewController: UIViewController {
                     print(e)
                 } else {
                     self.performSegue(withIdentifier: "LoginToAccount", sender: self)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "AccountTabBarController")
+                        
+                        // This is to get the SceneDelegate object from your view controller
+                        // then call the change root view controller function to change to main tab bar
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
                 }
             }
         }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "AccountTabBarController")
-            
-            // This is to get the SceneDelegate object from your view controller
-            // then call the change root view controller function to change to main tab bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
         
     }
     

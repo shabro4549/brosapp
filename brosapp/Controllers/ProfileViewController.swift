@@ -10,7 +10,6 @@ import Firebase
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
     @IBOutlet weak var tableView: UITableView!
@@ -29,26 +28,6 @@ class ProfileViewController: UIViewController {
         
         loadTrackersResults()
         lowestToHighest()
-        
-        
-
-        if let userEmail = user?.email {
-            let docRef = db.collection("users").document(userEmail)
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let property = document.get("Name") as! String
-                    print(property)
-                   
-                    self.nameLabel.text = "Welcome back, \(property)"
-            
-                } else {
-                    print("Document does not exist")
-                    self.nameLabel.text = "Welcome back"
-                }
-            }
-        }
-        
-//        print(trackerProgress)
         
     }
     

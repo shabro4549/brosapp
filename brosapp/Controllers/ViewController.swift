@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         registerButton.clipsToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {

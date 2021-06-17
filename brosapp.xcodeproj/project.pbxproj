@@ -20,6 +20,7 @@
 		FD46B4E6263CDF81007BD5C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46B4E5263CDF81007BD5C4 /* ViewController.swift */; };
 		FD46B4E9263CDF81007BD5C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD46B4E7263CDF81007BD5C4 /* Main.storyboard */; };
 		FD46B4EE263CDF83007BD5C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD46B4EC263CDF83007BD5C4 /* LaunchScreen.storyboard */; };
+		FD5203F8267BE8E500F96D01 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5203F7267BE8E500F96D01 /* GraphViewController.swift */; };
 		FD9B5B8A265879F9002E867C /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5B89265879F8002E867C /* WeightViewController.swift */; };
 		FD9B5B8F265F0B0A002E867C /* ProgressCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5B8D265F0B0A002E867C /* ProgressCollectionCell.swift */; };
 		FD9B5B90265F0B0A002E867C /* ProgressCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */; };
@@ -59,6 +60,7 @@
 		FD46B4E8263CDF81007BD5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD46B4ED263CDF83007BD5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD46B4EF263CDF83007BD5C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD5203F7267BE8E500F96D01 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		FD9B5B89265879F8002E867C /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		FD9B5B8D265F0B0A002E867C /* ProgressCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionCell.swift; sourceTree = "<group>"; };
 		FD9B5B8E265F0B0A002E867C /* ProgressCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCollectionCell.xib; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				FDD966362667181600654741 /* BreatheViewController.swift */,
 				FDD966392667182600654741 /* NumberViewController.swift */,
 				FDD9663C2667183400654741 /* TimerViewController.swift */,
+				FD5203F7267BE8E500F96D01 /* GraphViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
 				FDD966752672DD8800654741 /* ResultsCell.swift in Sources */,
 				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
+				FD5203F8267BE8E500F96D01 /* GraphViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,
 				FDB724252641F71900985FE8 /* Tracker.swift in Sources */,
 			);
