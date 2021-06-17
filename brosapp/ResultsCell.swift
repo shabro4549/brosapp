@@ -21,12 +21,16 @@ class ResultsCell: UITableViewCell {
     @IBOutlet weak var shortestLabel: UILabel!
     @IBOutlet weak var avgLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var shortTitle: UILabel!
+    @IBOutlet weak var longTitle: UILabel!
+    @IBOutlet weak var sessionNumberLabel: UILabel!
     
-    func configure(with trackerName: String, with highestValue: Float, with lowestValue: Float, with avgValue: Float, with isWeight: Bool) {
+    func configure(with trackerName: String, with highestValue: Float, with lowestValue: Float, with avgValue: Float, with isWeight: Bool, with sessions: Int) {
         nameLabel.text = trackerName
         longestLabel.text = String(highestValue)
         shortestLabel.text = String(lowestValue)
         avgLabel.text = String(avgValue)
+        sessionNumberLabel.text = String(sessions)
         if isWeight == true {
             weightLabel.isHidden = false
         } else {
@@ -45,7 +49,8 @@ class ResultsCell: UITableViewCell {
         self.resultsView.layer.insertSublayer(background, at: 0)
         resultsView.layer.cornerRadius = (resultsView.frame.height)/2
         resultsView.clipsToBounds = true
-        
+        longTitle.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        shortTitle.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         
         // Initialization code
     }

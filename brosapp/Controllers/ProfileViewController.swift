@@ -183,10 +183,11 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
                         highestProgress = trackerProgress.max()!
                         lowestProgress = trackerProgress.min()!
                         let sumArray = trackerProgress.reduce(0, +)
-                        let count = Float(trackerProgress.count)
+                        let sessions = trackerProgress.count
+                        let count = Float(sessions)
                         avgProgress = sumArray/count
                         let isWeight = true
-                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight)
+                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
                         
 
                     }
@@ -244,10 +245,11 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
                         highestProgress = trackerProgress.max()!
                         lowestProgress = trackerProgress.min()!
                         let sumArray = trackerProgress.reduce(0, +)
-                        let count = Float(trackerProgress.count)
+                        let sessions = trackerProgress.count
+                        let count = Float(sessions)
                         avgProgress = sumArray/count
                         let isWeight = false
-                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight)
+                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
                         
 
                     }
