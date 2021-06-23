@@ -12,9 +12,12 @@ class GraphViewController: UIViewController {
     
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
+    
+    var usersTrackers: [Tracker] = []
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var signOutButton: UIBarButtonItem!
+    @IBOutlet weak var graphTableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -36,9 +39,56 @@ class GraphViewController: UIViewController {
             }
         }
         
+        graphTableView.delegate = self
+        graphTableView.dataSource = self
+        graphTableView.register(UINib(nibName: "GraphCell", bundle: nil), forCellReuseIdentifier: "GraphCell")
+        loadTrackers()
         let font = UIFont.systemFont(ofSize: 12);
         signOutButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
-        // Do any additional setup after loading the view.
+
+    }
+    
+    func loadTrackers() {
+        
+        usersTrackers = []
+        
+        db.collection("trackers").addSnapshotListener { (querySnapshot, error) in
+                self.usersTrackers = []
+
+                if let e = error {
+                    print("There was an issue retrieving tracker data from Firestore. \(e)")
+                } else {
+                    
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        
+                        for doc in snapshotDocuments {
+    //                        print("This is the doc in snapshotListener for bigGoals ... \(doc.data())")
+                            let data = doc.data()
+                            
+                            if let userData = data["user"] as? String, let trackerData = data["Name of Tracker"] as? String, let metricData = data["Tracking Metric"] as? String {
+                                
+                                let newTracker = Tracker(user: userData, trackerName: trackerData, trackingMetric: metricData)
+                                
+                                if let userEmail = self.user?.email {
+                                    if newTracker.user == userEmail {
+                                        self.usersTrackers.append(newTracker)
+                                    }
+                                }
+                        
+                                DispatchQueue.main.async {
+                                    self.graphTableView.reloadData()
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+            
+        }
     }
     
     @IBAction func signOutPressed(_ sender: Any) {
@@ -56,14 +106,22 @@ class GraphViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+//MARK: - TableView Delegate & DataSource
+
+extension GraphViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return usersTrackers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = graphTableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath) as! GraphCell
+        cell.configure(with: usersTrackers[indexPath.row].trackerName)
+        return cell
+    }
+    
+    
+}
+

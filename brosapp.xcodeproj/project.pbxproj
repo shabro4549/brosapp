@@ -40,6 +40,8 @@
 		FDD9666D26729F8D00654741 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9666C26729F8D00654741 /* Progress.swift */; };
 		FDD966752672DD8800654741 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966732672DD8800654741 /* ResultsCell.swift */; };
 		FDD966762672DD8800654741 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD966742672DD8800654741 /* ResultsCell.xib */; };
+		FDE9A23E2683ECD600DB0D8D /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */; };
+		FDE9A23F2683ECD600DB0D8D /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		FDD9666C26729F8D00654741 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		FDD966732672DD8800654741 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		FDD966742672DD8800654741 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
+		FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */,
 				FDD966732672DD8800654741 /* ResultsCell.swift */,
 				FDD966742672DD8800654741 /* ResultsCell.xib */,
+				FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */,
+				FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */,
 			);
 			path = brosapp;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE9A23F2683ECD600DB0D8D /* GraphCell.xib in Resources */,
 				FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */,
 				FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */,
 				FDD966762672DD8800654741 /* ResultsCell.xib in Resources */,
@@ -332,6 +339,7 @@
 				FDD9663D2667183400654741 /* TimerViewController.swift in Sources */,
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
 				FDD966752672DD8800654741 /* ResultsCell.swift in Sources */,
+				FDE9A23E2683ECD600DB0D8D /* GraphCell.swift in Sources */,
 				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
 				FD5203F8267BE8E500F96D01 /* GraphViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,
