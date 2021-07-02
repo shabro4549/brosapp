@@ -258,7 +258,8 @@ class CreateTrackerAlert: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: alertView.frame.size.width, height: 80))
         titleLabel.text = title
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont(name: "Baloo", size: 22)
+        titleLabel.font = UIFont(name: "Damascus Bold", size: 16)
+        titleLabel.textColor = #colorLiteral(red: 0.1254734099, green: 0.1255019307, blue: 0.1254696548, alpha: 1)
         alertView.addSubview(titleLabel)
         
         let messageLabel = UILabel(frame: CGRect(x: 50, y: 0, width: alertView.frame.size.width, height: 170))
@@ -298,15 +299,15 @@ class CreateTrackerAlert: UIViewController {
         let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
         button.setTitle("Add Tracker", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
-//        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        button.titleLabel?.font =  UIFont(name: "Arial Bold", size: 14)
+        button.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.4392156863, blue: 0.3607843137, alpha: 1)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
         
         let cancelButton = UIButton(frame: CGRect(x: alertView.frame.size.width/2, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
-//        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
+        cancelButton.titleLabel?.font =  UIFont(name: "Arial Bold", size: 14)
         cancelButton.backgroundColor = #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1)
         cancelButton.addTarget(self, action: #selector(cancelAlert), for: .touchUpInside)
         alertView.addSubview(cancelButton)

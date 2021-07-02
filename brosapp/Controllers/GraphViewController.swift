@@ -33,7 +33,7 @@ class GraphViewController: UIViewController {
                     self.nameLabel.text = "Welcome back, \(property)"
             
                 } else {
-                    print("Document does not exist")
+                    print("No name found in this users profile")
                     self.nameLabel.text = "Welcome back"
                 }
             }
@@ -45,6 +45,7 @@ class GraphViewController: UIViewController {
         loadTrackers()
         let font = UIFont.systemFont(ofSize: 12);
         signOutButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        print(usersTrackers)
 
     }
     
@@ -84,6 +85,8 @@ class GraphViewController: UIViewController {
                             
                         }
                         
+                        print(self.usersTrackers)
+                        
                     }
                     
                 }
@@ -118,7 +121,7 @@ extension GraphViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = graphTableView.dequeueReusableCell(withIdentifier: "GraphCell", for: indexPath) as! GraphCell
-        cell.configure(with: usersTrackers[indexPath.row].trackerName)
+        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: usersTrackers[indexPath.row].trackingMetric, with: usersTrackers)
         return cell
     }
     

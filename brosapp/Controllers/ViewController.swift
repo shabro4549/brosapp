@@ -7,22 +7,25 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet var googleButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.layer.cornerRadius = loginButton.frame.height/2
+        loginButton.layer.cornerRadius = 26
         loginButton.clipsToBounds = true
-        registerButton.layer.cornerRadius = registerButton.frame.height/2
+        registerButton.layer.cornerRadius = 26
         registerButton.clipsToBounds = true
         navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
         self.tabBarController?.tabBar.isHidden = true
+        GIDSignIn.sharedInstance().presentingViewController = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {

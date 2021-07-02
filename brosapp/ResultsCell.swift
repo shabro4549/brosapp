@@ -10,9 +10,9 @@ import UIKit
 
 class ResultsCell: UITableViewCell {
     
-    static let identifier = "TrackerCell"
+    static let identifier = "ResultsCell"
     static func nib() -> UINib {
-        return UINib(nibName: "TrackerCell", bundle: nil)
+        return UINib(nibName: "ResultsCell", bundle: nil)
     }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var resultsView: UIView!
@@ -29,7 +29,7 @@ class ResultsCell: UITableViewCell {
         nameLabel.text = trackerName
         longestLabel.text = String(highestValue)
         shortestLabel.text = String(lowestValue)
-        avgLabel.text = String(avgValue)
+        avgLabel.text = String(round(100*avgValue)/100)
         sessionNumberLabel.text = String(sessions)
         if isWeight == true {
             weightLabel.isHidden = false

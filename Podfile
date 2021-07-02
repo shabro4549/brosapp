@@ -10,5 +10,6 @@ target 'brosapp' do
   pod 'SwipeCellKit'
   pod 'Charts'
   pod 'TinyConstraints'
+  pod 'GoogleSignIn'
 
 end
