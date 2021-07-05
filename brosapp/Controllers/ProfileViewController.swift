@@ -15,8 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var usersTrackers: [Tracker] = []
     var trackerProgress: [Float] = []
-    var lowestProgress: Float = 0
-    var highestProgress: Float = 0
+//    var lowestProgress: Float = 0
+//    var highestProgress: Float = 0
     var avgProgress: Float = 0
     
     override func viewDidLoad() {
@@ -180,14 +180,22 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
 
                         }
                         
-                        highestProgress = trackerProgress.max()!
-                        lowestProgress = trackerProgress.min()!
-                        let sumArray = trackerProgress.reduce(0, +)
-                        let sessions = trackerProgress.count
-                        let count = Float(sessions)
-                        avgProgress = sumArray/count
-                        let isWeight = true
-                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        if let highestProgress = trackerProgress.max(), let lowestProgress = trackerProgress.min() {
+                            print(highestProgress)
+                            let sumArray = trackerProgress.reduce(0, +)
+                            let sessions = trackerProgress.count
+                            let count = Float(sessions)
+                            avgProgress = sumArray/count
+                            let isWeight = true
+                            cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        } else {
+                            let highestProgress: Float = 0.0
+                            let lowestProgress: Float = 0.0
+                            let sessions = 0
+                            avgProgress = 0
+                            let isWeight = true
+                            cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        }
                         
 
                     }
@@ -229,7 +237,6 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
                                             } else {
                                                 let trackerSessionLength = data["LengthInSeconds"] as! String
                                                 trackerProgress.append(Float(trackerSessionLength)!)
-                                                print(Float(trackerSessionLength))
                                             }
                                             
 
@@ -242,16 +249,24 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
 
                         }
                         
-                        highestProgress = trackerProgress.max()!
-                        lowestProgress = trackerProgress.min()!
-                        let sumArray = trackerProgress.reduce(0, +)
-                        let sessions = trackerProgress.count
-                        let count = Float(sessions)
-                        avgProgress = sumArray/count
-                        let isWeight = false
-                        cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        if let highestProgress = trackerProgress.max(), let lowestProgress = trackerProgress.min() {
+                            print(highestProgress)
+                            let sumArray = trackerProgress.reduce(0, +)
+                            let sessions = trackerProgress.count
+                            let count = Float(sessions)
+                            avgProgress = sumArray/count
+                            let isWeight = false
+                            cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        } else {
+                            let highestProgress: Float = 0.0
+                            let lowestProgress: Float = 0.0
+                            let sessions = 0
+                            avgProgress = 0
+                            let isWeight = false
+                            cell.configure(with: usersTrackers[indexPath.row].trackerName, with: highestProgress, with: lowestProgress, with: avgProgress, with: isWeight, with: sessions)
+                        }
                         
-
+                        
                     }
                 }
 
