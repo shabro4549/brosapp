@@ -59,14 +59,17 @@ class NumberViewController: UIViewController, UITextFieldDelegate {
             
             let number = numberLabel.text!
         
-            self.db.collection("progress").addDocument(data: [
-                "UserEmail" : user?.email!,
-                "Tracker" : trackerTitle!,
-                "Date" : currentDate,
-                "TimeCreated" : sortingDate,
-                "Number" : number,
-
-            ])
+            if let userEmail = user?.email {
+                self.db.collection("progress").addDocument(data: [
+                    "UserEmail" : userEmail,
+                    "Tracker" : trackerTitle!,
+                    "Date" : currentDate,
+                    "TimeCreated" : sortingDate,
+                    "Number" : number,
+                ])
+            } else {
+                print("Error unwrapping email in NumberViewController")
+            }
             
             navigationController?.popViewController(animated: true)
         }

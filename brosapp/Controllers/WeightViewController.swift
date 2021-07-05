@@ -55,16 +55,20 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             let reps = repsTextField.text!
             let sets = setsTextField.text!
             
+            if let userEmail = user?.email {
+                self.db.collection("weightProgress").addDocument(data: [
+                    "UserEmail" : userEmail,
+                    "Tracker" : trackerTitle!,
+                    "Date" : currentDate,
+                    "TimeCreated" : sortingDate,
+                    "Weight" : weight,
+                    "Reps" : reps,
+                    "Sets" : sets
+                ])
+            } else {
+                print("error unwrapping email")
+            }
             
-            self.db.collection("weightProgress").addDocument(data: [
-                "UserEmail" : user?.email!,
-                "Tracker" : trackerTitle!,
-                "Date" : currentDate,
-                "TimeCreated" : sortingDate,
-                "Weight" : weight,
-                "Reps" : reps,
-                "Sets" : sets
-            ])
             
             navigationController?.popViewController(animated: true)
         }

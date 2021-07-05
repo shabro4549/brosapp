@@ -1440,9 +1440,11 @@
                                                     <action selector="registerPressed:" destination="eAw-ve-wtb" eventType="touchUpInside" id="zSS-0n-BHL"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-jZ-BrH">
-                                                <rect key="frame" x="71" y="0.0" width="272" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-jZ-BrH">
+                                                <rect key="frame" x="71" y="3.5" width="272" height="14.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="aXa-vS-T7D"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1452,6 +1454,8 @@
                                         <constraints>
                                             <constraint firstItem="UBf-BY-ZaQ" firstAttribute="centerY" secondItem="LrR-re-Ts8" secondAttribute="centerY" id="GPQ-Sr-Skx"/>
                                             <constraint firstItem="UBf-BY-ZaQ" firstAttribute="centerX" secondItem="LrR-re-Ts8" secondAttribute="centerX" id="ZHj-lx-obU"/>
+                                            <constraint firstItem="wy3-jZ-BrH" firstAttribute="centerY" secondItem="LrR-re-Ts8" secondAttribute="centerY" constant="-102" id="hbr-fu-dZ6"/>
+                                            <constraint firstItem="wy3-jZ-BrH" firstAttribute="centerX" secondItem="LrR-re-Ts8" secondAttribute="centerX" id="ryZ-5q-8Lt"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1508,7 +1512,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zaC-q1-Mgd"/>
+        <segue reference="gpb-VW-xem"/>
         <segue reference="Q0u-Ew-vM9"/>
     </inferredMetricsTieBreakers>
     <resources>

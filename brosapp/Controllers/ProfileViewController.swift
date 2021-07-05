@@ -229,7 +229,6 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource {
                                             } else {
                                                 let trackerSessionLength = data["LengthInSeconds"] as! String
                                                 trackerProgress.append(Float(trackerSessionLength)!)
-                                                print(Float(trackerSessionLength))
                                             }
                                             
 

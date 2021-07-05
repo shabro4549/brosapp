@@ -119,19 +119,24 @@ class TimerViewController: UIViewController {
             let currentDate = formatter.string(from: date)
     //        print(currentDate)
             
-            self.db.collection("progress").addDocument(data: [
-                    "LengthInSeconds" : timeInSeconds,
-                    "UserEmail" : user?.email!,
-                    "Tracker" : trackerTitle!,
-                    "Date" : currentDate,
-                    "TimeCreated" : sortingDate
-            ]) { (error) in
-                    if let e = error {
-                        print("There was an issue saving data to firestore, \(e)")
-                    } else {
-                        print("Successfully saved data.")
+            if let userEmail = user?.email {
+                self.db.collection("progress").addDocument(data: [
+                        "LengthInSeconds" : timeInSeconds,
+                        "UserEmail" : userEmail,
+                        "Tracker" : trackerTitle!,
+                        "Date" : currentDate,
+                        "TimeCreated" : sortingDate
+                ]) { (error) in
+                        if let e = error {
+                            print("There was an issue saving data to firestore, \(e)")
+                        } else {
+                            print("Successfully saved data.")
+                        }
                     }
-                }
+            } else {
+                print("Error unwrapping email in TimerViewController")
+            }
+            
             
             navigationController?.popViewController(animated: true)
         }
