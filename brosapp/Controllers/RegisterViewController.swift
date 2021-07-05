@@ -8,18 +8,28 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
-    
+
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+
+        nameTextField.delegate = self
+        nameTextField.tag = 1
+        emailTextField.delegate = self
+        emailTextField.tag = 2
+        passwordTextField.delegate = self
+        passwordTextField.tag = 3
         
         registerButton.layer.cornerRadius = registerButton.frame.height/2
         registerButton.clipsToBounds = true
@@ -59,6 +69,21 @@ class RegisterViewController: UIViewController {
                 }
                 
             }
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1
+        {
+            nameTextField.endEditing(true)
+            return true
+        } else if textField.tag == 2
+        {
+            emailTextField.endEditing(true)
+            return true
+        } else {
+            passwordTextField.endEditing(true)
+            return true
         }
     }
 

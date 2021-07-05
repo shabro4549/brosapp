@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class WeightViewController: UIViewController {
+class WeightViewController: UIViewController, UITextFieldDelegate {
     
     var user = Auth.auth().currentUser
     var trackerTitle: String?
@@ -23,6 +23,12 @@ class WeightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        weightTextField.delegate = self
+        weightTextField.tag = 1
+        repsTextField.delegate = self
+        repsTextField.tag = 2
+        setsTextField.delegate = self
+        setsTextField.tag = 3
         doneButton.layer.cornerRadius = doneButton.frame.height/2
         doneButton.clipsToBounds = true
         // Do any additional setup after loading the view.
@@ -65,14 +71,20 @@ class WeightViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1
+        {
+            weightTextField.endEditing(true)
+            return true
+        } else if textField.tag == 2
+        {
+            repsTextField.endEditing(true)
+            return true
+        } else {
+            setsTextField.endEditing(true)
+            return true
+        }
     }
-    */
+    
 
 }
