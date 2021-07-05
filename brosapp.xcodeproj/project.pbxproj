@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A4C6C16F7492FED0C38BD4B8 /* Pods_brosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDE8A0EEDAB38C26E55D809 /* Pods_brosapp.framework */; };
 		FD05B34926533C2D00D124F9 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD05B34826533C2D00D124F9 /* ProgressViewController.swift */; };
+		FD1C936726840EB800B1E9E9 /* MyXAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C936626840EB800B1E9E9 /* MyXAxisValueFormatter.swift */; };
 		FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD229DDE2664874300A9F9FB /* ProfileViewController.swift */; };
 		FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */; };
 		FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */; };
@@ -40,6 +41,8 @@
 		FDD9666D26729F8D00654741 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9666C26729F8D00654741 /* Progress.swift */; };
 		FDD966752672DD8800654741 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD966732672DD8800654741 /* ResultsCell.swift */; };
 		FDD966762672DD8800654741 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDD966742672DD8800654741 /* ResultsCell.xib */; };
+		FDE9A23E2683ECD600DB0D8D /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */; };
+		FDE9A23F2683ECD600DB0D8D /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,7 @@
 		9B3886A30BB08868E8B80F8B /* Pods-brosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brosapp.release.xcconfig"; path = "Target Support Files/Pods-brosapp/Pods-brosapp.release.xcconfig"; sourceTree = "<group>"; };
 		9BCF4A50A3C1E2DC6EE4C56B /* Pods-brosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brosapp.debug.xcconfig"; path = "Target Support Files/Pods-brosapp/Pods-brosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		FD05B34826533C2D00D124F9 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		FD1C936626840EB800B1E9E9 /* MyXAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyXAxisValueFormatter.swift; sourceTree = "<group>"; };
 		FD229DDE2664874300A9F9FB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FD229DE52665E8EF00A9F9FB /* ColdCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColdCollectionCell.swift; sourceTree = "<group>"; };
 		FD229DE62665E8EF00A9F9FB /* ColdCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColdCollectionCell.xib; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		FDD9666C26729F8D00654741 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		FDD966732672DD8800654741 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		FDD966742672DD8800654741 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
+		FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,9 @@
 				FDD9664F26697AD500654741 /* TimeNumberCollectionCell.xib */,
 				FDD966732672DD8800654741 /* ResultsCell.swift */,
 				FDD966742672DD8800654741 /* ResultsCell.xib */,
+				FDE9A23C2683ECD600DB0D8D /* GraphCell.swift */,
+				FDE9A23D2683ECD600DB0D8D /* GraphCell.xib */,
+				FD1C936626840EB800B1E9E9 /* MyXAxisValueFormatter.swift */,
 			);
 			path = brosapp;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 				FD46B4DB263CDF81007BD5C4 /* Frameworks */,
 				FD46B4DC263CDF81007BD5C4 /* Resources */,
 				FD97744C9FC8E88A902BF223 /* [CP] Embed Pods Frameworks */,
+				E2DE159AE7163F2ADBFCB30D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE9A23F2683ECD600DB0D8D /* GraphCell.xib in Resources */,
 				FD229DE82665E8EF00A9F9FB /* ColdCollectionCell.xib in Resources */,
 				FDD9664B266974AF00654741 /* BreatheCollectionCell.xib in Resources */,
 				FDD966762672DD8800654741 /* ResultsCell.xib in Resources */,
@@ -290,6 +301,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E2DE159AE7163F2ADBFCB30D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-brosapp/Pods-brosapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-brosapp/Pods-brosapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-brosapp/Pods-brosapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD97744C9FC8E88A902BF223 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +347,7 @@
 				FDB7242A2643436000985FE8 /* TrackerCell.swift in Sources */,
 				FD304BB62640967200C82F40 /* LoginViewController.swift in Sources */,
 				FD304BBA2640968400C82F40 /* RegisterViewController.swift in Sources */,
+				FD1C936726840EB800B1E9E9 /* MyXAxisValueFormatter.swift in Sources */,
 				FDD966372667181600654741 /* BreatheViewController.swift in Sources */,
 				FDD9666D26729F8D00654741 /* Progress.swift in Sources */,
 				FD229DE72665E8EF00A9F9FB /* ColdCollectionCell.swift in Sources */,
@@ -332,6 +361,7 @@
 				FDD9663D2667183400654741 /* TimerViewController.swift in Sources */,
 				FD229DDF2664874400A9F9FB /* ProfileViewController.swift in Sources */,
 				FDD966752672DD8800654741 /* ResultsCell.swift in Sources */,
+				FDE9A23E2683ECD600DB0D8D /* GraphCell.swift in Sources */,
 				FDD9663A2667182600654741 /* NumberViewController.swift in Sources */,
 				FD5203F8267BE8E500F96D01 /* GraphViewController.swift in Sources */,
 				FD46B4E4263CDF81007BD5C4 /* SceneDelegate.swift in Sources */,

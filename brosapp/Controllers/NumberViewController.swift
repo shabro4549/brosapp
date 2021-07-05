@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class NumberViewController: UIViewController {
+class NumberViewController: UIViewController, UITextFieldDelegate {
     
     var user = Auth.auth().currentUser
     var trackerTitle: String?
@@ -26,7 +26,7 @@ class NumberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        numberLabel.delegate = self
+        numberLabel.delegate = self
         numberLabel.text = "0"
         numberLabel.keyboardType = .numberPad
         feedbackLabel.alpha = 0
@@ -59,29 +59,27 @@ class NumberViewController: UIViewController {
             
             let number = numberLabel.text!
         
-            self.db.collection("progress").addDocument(data: [
-                "UserEmail" : user?.email!,
-                "Tracker" : trackerTitle!,
-                "Date" : currentDate,
-                "TimeCreated" : sortingDate,
-                "Number" : number,
-
-            ])
+            if let userEmail = user?.email {
+                self.db.collection("progress").addDocument(data: [
+                    "UserEmail" : userEmail,
+                    "Tracker" : trackerTitle!,
+                    "Date" : currentDate,
+                    "TimeCreated" : sortingDate,
+                    "Number" : number,
+                ])
+            } else {
+                print("Error unwrapping email in NumberViewController")
+            }
             
             navigationController?.popViewController(animated: true)
         }
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        numberLabel.endEditing(true)
+        return true
     }
-    */
 
 }
 

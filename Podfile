@@ -8,6 +8,8 @@ target 'brosapp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'SwipeCellKit'
-
+  pod 'Charts'
+  pod 'TinyConstraints'
+  pod 'GoogleSignIn'
 
 end

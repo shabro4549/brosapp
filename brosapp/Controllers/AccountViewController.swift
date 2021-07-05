@@ -11,12 +11,10 @@ import Firebase
 class AccountViewController: UIViewController {
     
     var user = Auth.auth().currentUser
-//    var usersTrackers = ["Breathing", "Cold Shower"]
     var usersTrackers: [Tracker] = []
     var selectedTracker = "" 
     let db = Firestore.firestore()
     @IBOutlet weak var trackerTableView: UITableView!
-//    let alert = UIAlertController(title: "Add a Tracker", message: "Add something you'd like to track", preferredStyle: .alert)
     let customAlert = CreateTrackerAlert()
     
     
@@ -27,14 +25,6 @@ class AccountViewController: UIViewController {
         trackerTableView.dataSource = self
         trackerTableView.register(UINib(nibName: "TrackerCell", bundle: nil), forCellReuseIdentifier: "TrackerCell")
         loadTrackers()
-
-//        alert.addTextField { (textField) in
-//        textField.placeholder = "Name of metric you'd like to track"
-//        }
-//        alert.addAction(UIAlertAction(title: "Add Tracker", style: .default, handler: nil))
-//        print(user?.email!)
-
-        // Do any additional setup after loading the view.
         
 //        let docRef = db.collection("trackers").document(user?.email!)
     }
@@ -83,49 +73,13 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func addTrackerPressed(_ sender: Any) {
-        
         customAlert.showAlert(with: "Add a Tracker", message: "Add something you'd like to track", on: self)
-        
-//        func dismissAlert() {
-//            customAlert.dismissAlert()
-//        }
-//
-//        var textField = UITextField()
-//        let alert = UIAlertController(title: "Add a Tracker", message: "Add something you'd like to track", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Add Tracker", style: .default) { (action) in
-//
-//            if let trackerName = textField.text, let userEmail = self.user?.email! {
-//                self.db.collection("trackers").addDocument(data: [
-//                    "Name of Tracker" : trackerName,
-//                    "user": userEmail
-//                ]) { (error) in
-//                    if let e = error {
-//                        print("There was an error saving tracker to trackers database on firestore, \(e)")
-//                    } else {
-//                        print("Successfully saved tracker to trackers db.")
-//                    }
-//
-//                }
-//            }
-//
-//            //            self.tableView.reloadData()
-//        }
-//
-//        alert.addTextField { (alertTextField) in
-//            alertTextField.placeholder = "Name of metric you'd like to track"
-//            textField = alertTextField
-//        }
-//
-//        alert.addAction(action)
-//
-//        present(alert, animated: true, completion: nil)
-
     }
     
 
 }
 
-//MARK: - TableView Delegate
+//MARK: - TableView Delegate & DataSource
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -135,18 +89,8 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = trackerTableView.dequeueReusableCell(withIdentifier: "TrackerCell", for: indexPath) as! TrackerCell
         cell.delegate = self
-//        cell.trackerName.text = usersTrackers[indexPath.row].trackerName
         cell.configure(with: usersTrackers[indexPath.row].trackerName)
         return cell
-        
-//        for tracker in usersTrackers {
-//            if tracker.user == Auth.auth().currentUser?.email {
-//                usersGoal.append(tracker.trackerName)
-//            }
-//        }
-        
-//        cell.configure(with: usersTrackers[indexPath.row])
-
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -205,14 +149,9 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             
-            
-            
-            
-
-            }
-            
         }
     }
+}
 
 
 //MARK: - TableViewCell Delegate
@@ -319,7 +258,8 @@ class CreateTrackerAlert: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: alertView.frame.size.width, height: 80))
         titleLabel.text = title
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont(name: "Baloo", size: 22)
+        titleLabel.font = UIFont(name: "Damascus Bold", size: 16)
+        titleLabel.textColor = #colorLiteral(red: 0.1254734099, green: 0.1255019307, blue: 0.1254696548, alpha: 1)
         alertView.addSubview(titleLabel)
         
         let messageLabel = UILabel(frame: CGRect(x: 50, y: 0, width: alertView.frame.size.width, height: 170))
@@ -347,12 +287,7 @@ class CreateTrackerAlert: UIViewController {
         recordLabel.font = recordLabel.font.withSize(10)
         recordLabel.textAlignment = .left
         alertView.addSubview(recordLabel)
-        
-//        let items: [UIImage] = [
-//            UIImage(systemName: "timer")!,
-//            UIImage(systemName: "number")!
-//        ]
-//        let customSC = UISegmentedControl(items: items)
+    
         customSC.selectedSegmentIndex = 0
         customSC.frame = CGRect(x: 45, y: 200,
                                 width: 240, height: 42)
@@ -361,21 +296,18 @@ class CreateTrackerAlert: UIViewController {
         customSC.selectedSegmentTintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         alertView.addSubview(customSC)
         
-//        customSC.selectedSegmentIndex
-        
-        
         let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
         button.setTitle("Add Tracker", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
-//        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        button.titleLabel?.font =  UIFont(name: "Arial Bold", size: 14)
+        button.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.4392156863, blue: 0.3607843137, alpha: 1)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
         
         let cancelButton = UIButton(frame: CGRect(x: alertView.frame.size.width/2, y: alertView.frame.height-50, width: alertView.frame.size.width/2, height: 50))
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1), for: .normal)
-//        button.titleLabel?.font =  UIFont(name: "Baloo", size: 16)
+        cancelButton.titleLabel?.font =  UIFont(name: "Arial Bold", size: 14)
         cancelButton.backgroundColor = #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1)
         cancelButton.addTarget(self, action: #selector(cancelAlert), for: .touchUpInside)
         alertView.addSubview(cancelButton)
@@ -425,7 +357,6 @@ class CreateTrackerAlert: UIViewController {
     
     @objc func dismissAlert() {
         if sampleTextField.text! == "" {
-//            sampleTextField.placeholder = "What would you like to track?"
             sampleTextField.attributedPlaceholder = NSAttributedString(string: "What would you like to track?",
                                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         } else {

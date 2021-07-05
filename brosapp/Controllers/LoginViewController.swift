@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.delegate = self
+        emailTextField.tag = 1
+        passwordTextField.delegate = self
+        passwordTextField.tag = 2
         loginButton.layer.cornerRadius = loginButton.frame.height/2
         loginButton.clipsToBounds = true
         self.tabBarController?.tabBar.isHidden = true
@@ -41,4 +45,14 @@ class LoginViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1
+        {
+            emailTextField.endEditing(true)
+            return true
+        } else {
+            passwordTextField.endEditing(true)
+            return true
+        }
+    }
 }
